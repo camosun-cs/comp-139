@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><!-- TITLE -->Example Lab<!-- / --> (Lab <!-- LAB NUMBER -->Y<!-- / -->) - COMP 132</title>
+	<meta name="viewport" content="width=device-width"/>
+	<!-- change the template part of the base to the lab's containing folder. -->
+	<!-- comment out the base element to work locally -->
+	<base href="https://camosun-cs.github.io/comp-132-139/labs/template/" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
+	<!-- include additional styles inline here if necessary
+		<style>...</style>
+	-->
+</head>
+<body>
+	<header>
+		<h1>COMP 132 - Lab <!-- LAB NUMBER -->Y<!-- / --> - <!-- TITLE -->Example Lab<!-- / --></h1>
+		<nav><ol>
+			<!-- every lab should start with this -->
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<!-- repeat one for each task, adjusting @href for each -->
+			<li><a href="#task1"><strong>Task <!-- TASK_NUM -->1<!-- / --></strong>: <!-- TASK_TITLE -->Example Task<!-- / --></a></li>
+			<!-- every lab should end with this -->
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>In this lab assignment you will learn about:</p>
+		<ul>
+			<!-- list learning outcomes here -->
+			<li><!-- OUTCOME_ITEM -->example outcome<!-- / --></li>
+		</ul>
+		<!-- optional additional contextual introduction -->
+	</section>
+
+	<!-- create one section per task, adjusting @id for each -->
+	<section id="task1">
+		<h2>Task <!-- TASK_NUM -->1<!-- / -->: <!-- TASK_TITLE -->Example Task<!-- / --></h2>
+		<!-- optional header graphic showing relevant tools for this task -->
+		<figure><img src="http://dummyimage.com/800x192&amp;text=Header+Graphic" height="192" width="800" alt="example header graphic" /></figure>
+		<!-- optional pre-amble of any kind -->
+		<!-- every task should have at least one ol.instructions -->
+		<ol class="instructions">
+			<!-- each step should be a short, concrete action -->
+			<li>
+				<p>Write an example task step. Always wrap text in <code>&lt;p></code> if there are other elements nearby.</p>
+				<!-- Use aside to create pull-out warnings, notes, etc -->
+				<!-- These should appear _after_ the text they should float next to. -->
+				<aside>
+					<strong>Remember:</strong> Always insert asides <em>after</em>
+					the relevant paragraph so that they make sence when read one
+					after the other on a narrow screen.
+				</aside>
+				<!-- Use details for additional contextual help or further reading -->
+				<details open>
+					<!-- always include a short summary of what this is about -->
+					<summary>Other special markup</summary>
+					<!-- provide enough information to understand the current step,
+						 but try not to explicitly give the solution. -->
+					<figure>
+						<img src="http://dummyimage.com/600x24:9&amp;text=Figure" alt="an example figure"/>
+						<figCaption>figures in a details will be full width</figCaption>
+					</figure>
+					<ul class="instructions">
+						<li>
+							<p><code>abbr</code> titles will be automatically exapnded,
+							eg. <abbr title="Hyper Text Markup Language">HTML</abbr>.</p>
+							<figure class="right pull-up">
+								<img src="http://dummyimage.com/96&amp;text=Figure" alt="an example figure"/>
+								<figCaption>figures with class "right" will float right. the class "pull-up" vertically aligns them with their container if they're floated.</figCaption>
+							</figure>
+						</li>
+						<li>
+							Use <code>samp</code> when mentioning items on screen
+							(eg. the <samp>File</samp> menu) and filenames (eg.
+							<samp>example.txt</samp>).
+						</li>
+						<li>
+							Use <code>code</code> to markup example computer code or
+							variables mentioned within running prose, eg. the word
+							"code" at the beginning of this point.
+						</li>
+						<li>
+							Add a language class to code elements to enable syntax
+							highlighting, eg. <code>language-markup</code>
+							or <code>language-javascript</code>.
+						</li>
+						<li>
+							<p>Use <code>code</code> wrapped in <code>pre</code> to markup
+							code blocks, eg.</p>
+							<pre><code class="language-markup">
+								&lt;pre>&lt;code class="language-java">int example = 1;&lt;/code>&lt;/pre>
+							</code></pre>
+						</li>
+						<li>
+							<p>Alternately, load a code sample into the page from an external
+							file (and provide a	download link) like this:</p>
+							<a class="sample language-markup" href="embed-sample.html" download>Download sample code</a>
+							<p>Very handy for HTML samples, so you don't have to manually escape them!</p>
+						</li>
+						<li>
+							Use <code>dl</code> with class <code>inline</code> to
+							create definition lists with terms and definitions
+							on the same line, eg.
+							<dl class="inline">
+								<dt>Term</dt>
+								<dd>Definition.</dd>
+							</dl>
+						</li>
+					</ul>
+				</details>
+			</li>
+		</ol>
+	</section>
+
+	<!-- additional task sections here as required -->
+
+	<!-- this section should always be last -->
+	<section id="submission">
+		<h2>Submission</h2>
+		<!-- optional paragraph about "what you've learned" -->
+		<p>
+			Completing all tasks in this lab should result
+			<!-- UPDATE NUMBER OF FILES -->X separate Java files within a single
+			package. Compress the package directory into a ZIP archive and
+			<b>upload it</b> to the D2L Dropbox. Make sure the filename includes
+			your name and lab number, for example
+			<!-- UPDATE LAB NUMBER --><kbd>LabY-JohnSmith.zip</kbd>.
+			In addition, <b>print out your code</b> and hand in the physical
+			copy at the beginning of the next lab session.
+		</p>
+		<p>
+			The marks for this lab are heavily weighted towards good coding
+			practice and style. Pay attention to each of the points in the
+			marking criteria below to ensure you get a good grade!
+		</p>
+		<p>
+			<b>NOTE</b>: This assignment is to be done <em>individually</em>.
+			You can help one another with problems and questions, but in the end
+			everyone must do their own assignment.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<!-- optionally break down into groups:
+					<tr><th colspan="2">Group</th></tr>
+				-->
+				<!-- itemize marking deliverables -->
+				<tr>
+					<td>Deliverable</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>Deliverable</td>
+					<td>10</td>
+				</tr>
+			</tbody>
+			<!-- Total marks at end -->
+			<tfoot>
+				<tr>
+					<th>Total</th>
+					<td>20</td> <!-- UPDATE THIS! -->
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+
+	<script src="../template/bundle.js" async defer></script>
+	<!-- additional scripts can be added here if necessary -->
+</body>
+</html>
