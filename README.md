@@ -4,7 +4,7 @@ Course materials for COMP139 at Camosun College
 
 ## Labs
 
-1. [Objects and Inheritance Review](labs/review)
+1. [COMP 132 Review](labs/review)
 1. Interfaces, APIs, and Exceptions
 1. Stacks, Queues, Deques, and Generics
 1. Linked Lists and Sorting
