@@ -1,7 +1,5 @@
 Course materials for COMP139 at Camosun College
 
-# comp-139
-
 ## Labs
 
 1. [COMP 132 Review](labs/review)
