@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>OOP Review (Lab 1) - COMP 139</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="https://camosun-cs.github.io/comp-139/labs/template/" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
+</head>
+<body>
+	<header>
+		<h1>COMP 139 - Lab 1 - OOP Review</h1>
+		<nav><ol>
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<li><a href="#task1"><strong>Task 1</strong>: class Person</a></li>
+			<li><a href="#task2"><strong>Task 2</strong>: Employees and Patients</a></li>
+			<li><a href="#task3"><strong>Task 3</strong>: Main Program</a></li>
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>This assignment reviews the coding techniques and concepts that should already be familiar to you from COMP 132 or equivalent courses. If this material is new to you or is very difficult, you should not be taking this course. If this material is familiar but a little difficult, you're in the right place!</p>
+		<p>Topics covered by this lab include:</p>
+		<ul>
+			<li>classes and inheritance</li>
+			<li>public, private, and protected</li>
+			<li>static fields and methods</li>
+			<li>constants</li>
+			<li>method overloading</li>
+			<li>branching and looping</li>
+			<li>arrays</li>
+			<li>JavaDoc</li>
+		</ul>
+		<p>Do not add any public fields or methods to the classes in this assignment beyond those listed in the UML. However, you may add as many <em>private</em> fields and methods as you see fit.</p>
+	</section>
+
+	<section id="task1">
+		<h2>Task 1: class Person</h2>
+		<p>Create the <code>Person</code> class as described below.</p>
+		<figure class="uml">
+			<figcaption>Person</figcaption>
+			<ul>
+				<li>+ ID: int</li>
+				<li>+ givenName: String</li>
+				<li>+ surname: String</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ Person(givenName: String, surname: String)</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ toString(): String</li>
+			</ul>
+		</figure>
+		<p>Each <code>Person</code> should be assigned a unique <code>ID</code> value when created, starting from 1 for the first instance, and increasing by 1 for each subsequent instance.</p>
+		<aside>
+			Hint: Using <code>Math.random()</code> <em>will not work</em> for assigning IDs, since it may generate the same number more than once. Instead, use a <code>static</code> counter variable.
+		</aside>
+		<p>The <code>givenName</code> and <code>surname</code> properties store this person's personal and family names respectively (eg. "George" and "Smith"). Either of these fields may be left blank (<code>null</code>).</p>
+		<p>The <code>toString()</code> method should return a String displaying the person's full name and ID, for example <code class="language-java">"John Jones (ID# 0003)"</code>. If a name field is null, it should not be included in the output.</p>
+		<p>Remember to use JavaDoc to document all public fields, constructors, and methods!</p>
+	</section>
+
+	<section id="task2">
+		<h2>Task 2: Employees and Patients</h2>
+		<p>Create the <code>Employee</code>, <code>Nurse</code>, <code>Doctor</code>, and <code>Patient</code> classes described below.</p>
+
+		<figure class="uml">
+			<figcaption>Employee <small class="uml-extends">extends Person</small></figcaption>
+			<ul>
+				<li>+ unit: String</li>
+				<li># annualSalary: int</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ Employee(unit: String, givenName: String, surname: String)</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ getAnnualSalary(): int</li>
+			</ul>
+		</figure>
+		<p>The <code>unit</code> property describes the area or department where an employee works, for example: "Emergency", "Human Resources", or "Radiology".</p>
+		<p>The <code>annualSalary</code> field records this employee's base annual earnings, in dollars. It should be set to an appropriate amount by every subclass. The <code>getAnnualSalary()</code> method should return this amount.</p>
+		<aside>
+			Note: the <samp>#</samp> symbol in UML signifies a member with <code>protected</code> visibility. Also note that there is no <em>setAnnualSalary()</em> method, so only subclasses will be able to modify the <code>annualSalary</code> value.
+		</aside>
+
+		<figure class="uml">
+			<figcaption>Nurse <small class="uml-extends">extends Employee</small></figcaption>
+			<ul>
+				<li>+ <u>SHIFT_A: int</u></li>
+				<li>+ <u>SHIFT_B: int</u></li>
+				<li>+ <u>SHIFT_C: int</u></li>
+				<li>- shift: int</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ Nurse(unit: String, givenName: String, surname: String)</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ setShift(int): void</li>
+				<li>+ getShift(): int</li>
+				<li>+ toString(): String</li>
+			</ul>
+		</figure>
+		<p>Nurses are assigned a shift number that indicates the time of day and number of hours that they work. The default shift for new instances is <code>SHIFT_A</code>.</p>
+		<p>Nurses have a default annual salary of $80,000. However, if assigned to <code>SHIFT_B</code> they will earn $85,000 and if assigned to <code>SHIFT_C</code> they will earn $90,000.</p>
+		<p>The <code>toString()</code> method should be overloaded by this class to include the nurse's unit and assigned shift number (eg. <code class="language-java">"Martha McGee (ID# 1234) (Radiology unit, shift 5)"</code>).</p>
+
+		<figure class="uml">
+			<figcaption>Doctor <small class="uml-extends">extends Employee</small></figcaption>
+			<ul>
+				<li>+ specialty: String</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ Doctor(unit: String, specialty: String, givenName: String, surname: String)</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ toString(): String</li>
+			</ul>
+		</figure>
+		<p>The <code>specialty</code> field describes this doctor's main area of medicine, such as "Family Practice", "Neurology", or "Surgury".</p>
+		<p>All doctors earn an annual salary of $250,000.</p>
+		<p>The <code>toString()</code> method should be overloaded by this class to prefix the doctor's name with "Dr." and include their specialty (eg. <code class="language-java">"Dr. Brenda Freeman (ID# 0023) (Podiatry)"</code>).</p>
+
+		<figure class="uml">
+			<figcaption>Patient <small class="uml-extends">extends Person</small></figcaption>
+			<ul>
+				<li>+ physician: Doctor</li>
+			</ul>
+			<hr class="uml-divide" />
+			<ul>
+				<li>+ Patient(givenName: String, surname: String, physician: Doctor)</li>
+			</ul>
+		</figure>
+		<p>Every patient must be assigned a physician who is the <code>Doctor</code> primarily responsible for their care.</p>
+		<p>The <code>Patient</code> class does not override the <code>toString()</code> method that it inherits from <code>Person</code>.</p>
+	</section>
+
+	<section id="task3">
+		<h2>Task 3: Main Program</h2>
+		<p>Create a main program class that:</p>
+		<ol class="instructions">
+			<li>Creates three or more <code>Nurse</code> instances assigned to different shifts.</li>
+			<li>Creates three or more <code>Doctor</code> instances.</li>
+			<li>Creates three or more <code>Patient</code> instances with pre-determined names and manually assigned physicians chosen from the pool of <code>Doctor</code> instances previously created.</li>
+			<li>Generates another 20 <code>Patient</code> instances using randomly generated names and randomly assigns them physicians chosen from the pool of <code>Doctor</code> instances previously created.</li>
+			<li>Prints the <code>toString()</code> values for all employees.</li>
+			<li>Prints the <code>toString()</code> value and physician ID for each patient.</li>
+			<li>Calculates and prints the total annual cost to employ all of the created doctors and nurses.</li>
+			<li>Calculates and prints the number of patients assigned to each Doctor.</li>
+		</ol>
+		<p><strong>Use arrays</strong> to store all of your Patient, Nurse, and Doctor objects.</p>
+		<p>You can generate names by randomly choosing a combination of first and last names from pre-set lists of possibilities.</p>
+		<details>
+			<summary>Sample Names</summary>
+			<pre><code class="language-java">
+				// source: https://nameberry.com/unisex-names
+				String[] givenNames = {
+					"Avery", "Riley", "Jordan", "Angel", "Peyton",
+					"Quinn", "Hayden", "Taylor", "Alexis", "Rowan",
+					"Charlie", "Emerson", "Finley", "River", "Emery",
+					"Morgan", "Elliot", "London", "Eden", "Elliott",
+					"Karter", "Dakota", "Reese", "Remington", "Payton",
+					"Amari", "Phoenix", "Kendall", "Harley", "Rylan",
+					"Marley", "Dallas", "Skyler", "Spencer", "Sage",
+					"Kyrie", "Ellis", "Rory", "Remi", "Justice",
+					"Ali", "Haven", "Tatum", "Arden", "Linden",
+					"Devon", "Rebel", "Rio", "Ripley", "Frankie"
+				};
+
+				// source: http://www.locatemyname.com/topsurnames.php?country=canada
+				String[] surnames = {
+					"Smith", "Brown", "Tremblay", "Martin", "Roy",
+					"Wilson", "Macdonald", "Gagnon", "Johnson", "Taylor",
+					"Cote", "Campbell", "Anderson", "Leblanc", "Lee",
+					"Jones", "White", "Williams", "Miller", "Thompson",
+					"Gauthier", "Young", "Van", "Morin", "Bouchard",
+					"Scott", "Stewart", "Belanger", "Reid", "Pelletier",
+					"Moore", "Lavoie", "King", "Robinson", "Levesque",
+					"Murphy", "Fortin", "Gagne", "Wong", "Clark",
+					"Johnston", "Clarke", "Ross", "Walker", "Thomas",
+					"Boucher", "Landry", "Kelly", "Bergeron", "Davis"
+				};
+			</code></pre>
+		</details>
+		<p><strong>Do not</strong> use input from <code class="language-java">System.in</code> for any part of your program.</p>
+		<p>Use static methods as appropriate to organize your code.</p>
+		<p>Try to keep all output at the end of your program.</p>
+	</section>
+
+	<section id="submission">
+		<h2>Submission</h2>
+		<p>
+			Completing all tasks in this lab should result in 6 separate Java files within a single package named like <samp>LastnameFirstname_lab1</samp>. Compress the package directory into a ZIP archive and upload it to the D2L assignment.
+		</p>
+		<p>
+			The marks for this lab are heavily weighted towards good coding practice and style. Pay attention to your code formatting, make sure you have documented all public members using JavaDoc, and make sure you are using constants, arrays, loops, and methods effectively.
+		</p>
+		<p>
+			<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can help one another with problems and questions, but in the end everyone must do their own work.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Programs compile and run without error</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Good coding style</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Task requirements met or exceeded</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Total</th>
+					<td>6</td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+
+	<script src="../template/bundle.js" async defer></script>
+</body>
+</html>
