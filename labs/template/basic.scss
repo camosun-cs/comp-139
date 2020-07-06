@@ -444,6 +444,59 @@ figure {
 	margin-right: 0;
 }
 
+//~~~~~~~~~~~~~~~
+//  UML Diagrams
+//~~~~~~~~~~~~~~~~
+// use like:
+// <figure class="uml">
+//   <figcaption>MyClass <small class="uml-extends">extends ParentClass</small></figcaption>
+//   <ul>
+//     <li>- <u>privateStaticVar: int</u></li>
+//   </ul>
+//   <hr class="uml-divide" />
+//   <ul>
+//     <li>+ MyClass()</li>
+//   </ul>
+//   <hr class="uml-divide" />
+//   <ul>
+//     <li>+ method(param: String): int</li>
+//   </ul>
+// </figure>
+
+.uml {
+	display: table; // shrink-wrap
+	border: 1px solid black;
+	text-align: left;
+	margin-left: 0;
+	margin-right: 0;
+
+	& > figcaption {
+		text-align: center;
+		font-weight: bold;
+		border-bottom: 1px solid black;
+	}
+	& > ul {
+		list-style: none;
+		margin: 0.75rem;
+		padding: 0;
+	}
+}
+
+.uml-extends {
+	font-weight: normal;
+	font-size: smaller;
+}
+
+.uml-divide {
+	margin: 0.75rem 0;
+	border: 0;
+	border-top: 1px solid black;
+}
+
+.uml.inline {
+	display: inline-block;
+}
+
 //~~~~~~~~~~~~~~~~
 //  code samples
 //~~~~~~~~~~~~~~~~
