@@ -28,7 +28,7 @@
 			<li>public, private, and protected</li>
 			<li>static fields and methods</li>
 			<li>constants</li>
-			<li>method overloading</li>
+			<li>method overridding</li>
 			<li>branching and looping</li>
 			<li>arrays</li>
 			<li>JavaDoc</li>
@@ -110,7 +110,7 @@
 		</figure>
 		<p>Nurses are assigned a shift number that indicates the time of day and number of hours that they work. The default shift for new instances is <code>SHIFT_A</code>.</p>
 		<p>Nurses have a default annual salary of $80,000. However, if assigned to <code>SHIFT_B</code> they will earn $85,000 and if assigned to <code>SHIFT_C</code> they will earn $90,000.</p>
-		<p>The <code>toString()</code> method should be overloaded by this class to include the nurse's unit and assigned shift number (eg. <code class="language-java">"Martha McGee (ID# 1234) (Radiology unit, shift 5)"</code>).</p>
+		<p>The <code>toString()</code> method should be overridden by this class to include the nurse's unit and assigned shift number (eg. <code class="language-java">"Martha McGee (ID# 1234) (Radiology unit, shift 5)"</code>).</p>
 
 		<figure class="uml">
 			<figcaption>Doctor <small class="uml-extends">extends Employee</small></figcaption>
@@ -128,7 +128,7 @@
 		</figure>
 		<p>The <code>specialty</code> field describes this doctor's main area of medicine, such as "Family Practice", "Neurology", or "Surgury".</p>
 		<p>All doctors earn an annual salary of $250,000.</p>
-		<p>The <code>toString()</code> method should be overloaded by this class to prefix the doctor's name with "Dr." and include their specialty (eg. <code class="language-java">"Dr. Brenda Freeman (ID# 0023) (Podiatry)"</code>).</p>
+		<p>The <code>toString()</code> method should be overridden by this class to prefix the doctor's name with "Dr." and include their specialty (eg. <code class="language-java">"Dr. Brenda Freeman (ID# 0023) (Podiatry)"</code>).</p>
 
 		<figure class="uml">
 			<figcaption>Patient <small class="uml-extends">extends Person</small></figcaption>
