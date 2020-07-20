@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Queue</title>
+<meta charset="uft-8"/>
+<meta name="dc.created" content="2020-07-19">
+<meta name="description" content="declaration: package: examples, interface: Queue">
+<meta name="generator" content="javadoc/ClassWriterImpl">
+<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css">
+<script src="https://camosun-cs.github.io/comp-139/labs/template/javadoc.js"></script>
+</head>
+<body class="class-declaration">
+<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<div class="flexBox">
+<header role="banner" class="flexHeader">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="skipNav"><a id="skip.navbar.top">
+<!--   -->
+</a></div>
+</nav>
+</header>
+<div class="flexContent">
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">examples</a></div>
+<h1 title="Interface Queue" class="title">Interface Queue&lt;T&gt;</h1>
+</div>
+<div class="contentContainer">
+<section class="description">
+<hr>
+<pre>public interface <span class="typeNameLabel">Queue&lt;T&gt;</span></pre>
+</section>
+<section class="summary">
+<ul class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<li class="blockList">
+<section class="methodSummary"><a id="method.summary">
+<!--   -->
+</a>
+<h2>Method Summary</h2>
+<div class="memberSummary">
+<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t3" class="tableTab" onclick="show(4);">Abstract Methods</button></div>
+<div id="memberSummary_tabpanel" role="tabpanel">
+<table aria-labelledby="t0">
+<thead>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="altColor" id="i0">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#capacity()">capacity</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the number of available spaces left in the queue.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code><a href="Queue.html" title="type parameter in Queue">T</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dequeue()">dequeue</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Retrieves and removes the element at the head of the queue.</div>
+</td>
+</tr>
+<tr class="altColor" id="i2">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enqueue(T)">enqueue</a></span>&#8203;(<a href="Queue.html" title="type parameter in Queue">T</a>&nbsp;e)</code></th>
+<td class="colLast">
+<div class="block">Adds an element to the end of the queue.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i3">
+<td class="colFirst"><code><a href="Queue.html" title="type parameter in Queue">T</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#peek()">peek</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Retrieves (but does not remove) the element at the head of the queue.</div>
+</td>
+</tr>
+<tr class="altColor" id="i4">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reset()">reset</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Remove all items from the queue and reset the capacity to the initial
+ maximum amount.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<li class="blockList">
+<section class="methodDetails"><a id="method.detail">
+<!--   -->
+</a>
+<h2>Method Details</h2>
+<ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="capacity()">capacity</a></h3>
+<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">capacity</span>()</div>
+<div class="block">Returns the number of available spaces left in the queue.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>how many additional items the queue can hold.</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="enqueue(java.lang.Object)">
+<!--   -->
+</a><a id="enqueue(T)">enqueue</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">enqueue</span>&#8203;(<span class="arguments"><a href="Queue.html" title="type parameter in Queue">T</a>&nbsp;e)</span></div>
+<div class="block">Adds an element to the end of the queue.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>e</code> - the element to add to this collection</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - if the queue cannot hold additional items</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="dequeue()">dequeue</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="Queue.html" title="type parameter in Queue">T</a></span>&nbsp;<span class="memberName">dequeue</span>()</div>
+<div class="block">Retrieves and removes the element at the head of the queue.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the least-recently added element.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/NoSuchElementException.html?is-external=true" title="class or interface in java.util" class="externalLink">NoSuchElementException</a></code> - if the queue is empty</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="peek()">peek</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="Queue.html" title="type parameter in Queue">T</a></span>&nbsp;<span class="memberName">peek</span>()</div>
+<div class="block">Retrieves (but does not remove) the element at the head of the queue.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the least-recently added element.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/NoSuchElementException.html?is-external=true" title="class or interface in java.util" class="externalLink">NoSuchElementException</a></code> - if the queue is empty</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="reset()">reset</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">reset</span>()</div>
+<div class="block">Remove all items from the queue and reset the capacity to the initial
+ maximum amount.</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+<footer role="contentinfo">
+<nav role="navigation">
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+</div>
+<a id="skip.navbar.bottom">
+<!--   -->
+</a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+</nav>
+</footer>
+</div>
+</div>
+</body>
+</html>

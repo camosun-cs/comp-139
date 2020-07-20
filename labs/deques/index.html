@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<meta charset="utf-8">
+	<title>Stacks, Queues, and Generics (Lab 3) - COMP 139</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="https://camosun-cs.github.io/comp-139/labs/deques/" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
+	<style>
+		.api-frame {
+			box-sizing: border-box;
+			width: 100%;
+			height: 20em;
+			max-height: 90vh;
+			border: inset;
+		}
+		.api-linkbar {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		.api-popout, .api-download {
+			padding: 0 0.5em;
+			border-bottom-right-radius: 0.5em;
+			border-bottom-left-radius: 0.5em;
+			font-size: smaller;
+			background: rgba(0, 0, 0, 0.05);
+		}
+		.icon {
+			width: 0.8em;
+			height: 0.8em;
+			vertical-align: baseline;
+		}
+		.bonus {
+			font-size: 0.8em;
+			padding: 0.1em 0.4em;
+			border-radius: 0.5em;
+			background-color: #eef;
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+			border: 1px solid #ccf;
+			text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+	<svg style="display:none">
+		<symbol id="icon-popout" viewBox="0 0 768 768">
+			<desc>arrow pointing out of box</desc>
+			<path d="M584 664H104V184h216V80H0v688h688V448H584zM384 0l132 132-240 240 120 120 240-240 132 132V0z" fill="currentColor"/>
+		</symbol>
+		<symbol id="icon-download" viewBox="0 0 688 768">
+			<desc>arrow pointing into tray</desc>
+			  <path d="M619 309H432V0H262v309H75l272 272z" fill="currentColor"/>
+			  <path d="M584 664H104V448H0v320h688V448H584z" fill="currentColor"/>
+		</symbol>
+	</svg>
+	<template id="popout">
+		<a target="_blank" class="api-popout">
+			<span>Open in new window</span>
+			<svg class="icon"><use href="#icon-popout" /></svg>
+		</a>
+	</template>
+	<template id="download">
+		<a download class="api-download">
+			<span>Download interface</span>
+		</a>
+	</template>
+	<header>
+		<h1>COMP 139 - Lab 3 - Stacks, Queues, and Generics</h1>
+		<nav><ol>
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<li><a href="#task1"><strong>Task 1</strong>: Stack</a></li>
+			<li><a href="#task2"><strong>Task 2</strong>: Queue</a></li>
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>In this lab assignment you will be creating implementations of Stack and Queue data structures. In the process, you will get experience in:</p>
+		<ul>
+			<li>writing code to implement an interface</li>
+			<li>using generics</li>
+			<li>creating container classes that manage other objects</li>
+			<li>writing "library" classes without a pre-determined use case</li>
+			<li>working with circular arrays <span class="bonus">bonus!</span></li>
+		</ul>
+		<p>The Java standard library includes implementations of these abstract data types, but creating your own is a useful experience that will give you a better understanding of the considerations that go into designing concrete data structures. Note that the interfaces provided here differ substantially from those defined in the standard library in order to simplify your work for the assignment. We will look closer at the standard library classes later on in the course.</p>
+		<p><strong>Do not use any classes from the Java Collections Framework in your solutions for this assignment,</strong> except for <code>java.util.NoSuchElementException</code>.</p>
+		<p>Make sure you test your code as you progress through the tasks. There is no "main program" in this assignment, so good unit tests will be essential to ensure that your code is correct. <strong>Use a single main-method class to test your code from all tasks, and submit it along with the rest of your work.</strong></p>
+	</section>
+
+	<section id="task1">
+		<h2>Task 1: Stack</h2>
+		<p>Create an implementation of the <code>Stack</code> interface using arrays.</p>
+		<p>Make sure that your implementation does not retain references to items that have been removed from the stack.</p>
+		<p>You may find it easier to start with a non-generic solution that only handles one kind of data. You can do this by passing a concrete type parameter in the implements clause, eg:</p>
+		<pre><code class="language-java">
+			public class ArrayStack implements examples.Stack&lt;Integer> { }
+		</code></pre>
+		<p>However, your completed code should be a generic implementation, such as:</p>
+		<pre><code class="language-java">
+			public class ArrayStack&lt;T> implements examples.Stack&lt;T> { }
+		</code></pre>
+		<figure class="api">
+			<a class="api-doc" href="Stack.html">Javadoc</a>
+			<a class="api-interface" href="Stack.java" download>interface file</a>
+		</figure>
+	</section>
+
+	<section id="task2">
+		<h2>Task 2: Queue</h2>
+		<p>Create an implementation of the <code>Queue</code> interface using arrays.</p>
+		<p>Make sure that your implementation does not retain references to items that have been removed from the queue.</p>
+		<p>Your implementation may use a simple array approach for storage, where the capacity of the queue decreases as items are added and is <em>not restored</em> when items are dequeued. In this case, your queue will eventually become unusable, but the <code class="language-java">reset()</code> method should restore it to full capacity again. <u>For bonus marks</u>, use a "circular array" implementation instead so that your queue does not have this limitation.</p>
+		<figure class="api">
+			<a class="api-doc" href="Queue.html">Javadoc</a>
+			<a class="api-interface" href="Queue.java" download>interface file</a>
+		</figure>
+	</section>
+
+	<!--
+	<section id="task3">
+		<h2>Task 3: Deque</h2>
+		<p>Create an implementation of the Deque interface using arrays.</p>
+		<figure class="api">
+			<a class="api-doc" href="Deque.html">Javadoc</a>
+			<a class="api-interface" href="Deque.java" download>interface file</a>
+		</figure>
+	</section>
+	-->
+
+	<section id="submission">
+		<h2>Submission</h2>
+		<p>
+			Completing all tasks in this lab should result in <strong>3 separate Java files</strong> (one for each task, plus a main-method testing class) within a single package named like <samp>LastnameFirstname_lab3</samp>. You should <em>not</em> include the <code>Stack</code> or <code>Queue</code> interface files. Compress the package directory into a ZIP archive and upload it to the D2L assignment.
+		</p>
+		<p>
+			The marks for this lab are heavily weighted towards good coding practice and style. Pay attention to your code formatting, make sure you have documented all public members using JavaDoc, and make sure you are using constants, arrays, loops, and methods effectively.
+		</p>
+		<p>
+			<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can help one another with problems and questions, but in the end everyone must do their own work.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Programs compile and run without error</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Good coding style</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Task requirements met or exceeded</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Total</th>
+					<td>6</td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+
+	<script src="../template/bundle.js" async defer></script>
+	<script type="module">
+		const popoutTemplate = document.getElementById('popout')
+		const downloadTemplate = document.getElementById('download')
+		for (let figureEl of document.querySelectorAll('.api')) {
+			const docLink = figureEl.querySelector('.api-doc')
+			const interfaceLink = figureEl.querySelector('.api-interface')
+			// create iframe for documentation
+			// <iframe src="<href>" class="api-frame"></iframe>
+			const viewer = document.createElement('iframe')
+			viewer.onload = () => {
+				const api = viewer.contentDocument
+				for (let link of api.querySelectorAll('.externalLink')) {
+					link.target = '_blank'
+				}
+			}
+			viewer.src = docLink.href
+			viewer.className = 'api-frame'
+			// create utility links
+			const linkbar = document.createElement('div')
+			linkbar.className = 'api-linkbar'
+			const popout = popoutTemplate.content.cloneNode(true).firstElementChild
+			popout.href = docLink.href
+			linkbar.appendChild(popout)
+			const download = downloadTemplate.content.cloneNode(true).firstElementChild
+			download.href = interfaceLink.href
+			linkbar.appendChild(download)
+			// remove existing links
+			figureEl.removeChild(docLink)
+			figureEl.removeChild(interfaceLink)
+			// add the viewer and linkbar
+			figureEl.appendChild(viewer)
+			figureEl.appendChild(linkbar)
+		}
+	</script>
+</body>
+</html>
