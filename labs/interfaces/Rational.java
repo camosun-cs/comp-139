@@ -16,7 +16,7 @@ import java.util.Objects;
  * <p>Methods that return a Rational value will always return {@code Rational.ZERO}
  * or {@code Rational.ONE} if the resulting value of the operation is
  * <samp>0</samp> or <samp>1</samp> respectively. In all other cases, the result
- * may not be in canonical form.</p>
+ * might not be returned in canonical form.</p>
  *
  * <p>All methods and constructors for this class throw
  * {@link NullPointerException} when passed a <samp>null</samp>
