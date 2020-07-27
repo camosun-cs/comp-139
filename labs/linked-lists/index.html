@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<meta charset="utf-8">
+	<title>Linked Lists (Lab 4) - COMP 139</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="https://camosun-cs.github.io/comp-139/labs/linked-lists/" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
+</head>
+<body>
+	<header>
+		<h1>COMP 139 - Lab 4 - Linked Lists</h1>
+		<nav><ol>
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<li><a href="#task1"><strong>Task 1</strong>: implement List</a></li>
+			<li><a href="#task2"><strong>Task 2</strong>: implement Stack</a></li>
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>In this lab assignment you will be creating a Linked List data structure. In the process you'll practice:</p>
+		<ul>
+			<li>using generics</li>
+			<li>throwing exceptions</li>
+			<li>implementing interfaces</li>
+			<li>creating container classes that manage other objects</li>
+			<li>writing "library" classes without a pre-determined use case</li>
+		</ul>
+		<p>The Java standard library includes several flexible list implementations (including a doubly-linked list), but creating your own is a useful experience that will give you a better understanding of how linked data structures work and the trade-offs compared to fixed structures such as arrays. Note that the <code>List</code> interface provided here differs substantially from the one defined in the standard library in order to simplify your work for the assignment. We will look closer at the standard library classes later on in the course.</p>
+		<p><strong>Do not use any classes from the Java Collections Framework in your solutions for this assignment,</strong> except for <code>java.util.NoSuchElementException</code>.</p>
+		<p>Make sure you test your code as you progress through the tasks. There is no "main program" in this assignment, so good unit tests will be essential to ensure that your code is correct. <strong>Use a single main-method class to test your code from all tasks, and submit it along with the rest of your work.</strong></p>
+	</section>
+
+	<section id="task1">
+		<h2>Task 1: implement List</h2>
+		<p>Create an implementation of the <code>List</code> interface using a linked data structure. You will likely need to create two classes: one for the overall list itself, and one for the "nodes" that it chains together to hold the list content.</p>
+		<figure class="api">
+			<a class="api-doc" href="List.html">Javadoc</a>
+			<a class="api-interface" href="List.java" download>interface file</a>
+		</figure>
+	</section>
+
+	<section id="task2">
+		<h2>Task 2: implement Stack</h2>
+		<p>Implement the <code>Stack</code> interface using your linked data structure from <a href="#task1">Task 1</a>.</p>
+		<p>You may create an entirely new class for this task, or you may choose to extend your solution from Task 1. Eg:</p>
+		<pre><code class="language-java">
+			public class MyLinkedList&lt;T> implements examples.List&lt;T>, examples.Stack&lt;T> { }
+		</code></pre>
+		<p><em>Note</em>: the interface below is identical to the one from lab 3.</p>
+		<figure class="api">
+			<a class="api-doc" href="../deques/Stack.html">Javadoc</a>
+			<a class="api-interface" href="../deques/Stack.java" download>interface file</a>
+		</figure>
+	</section>
+
+	<section id="submission">
+		<h2>Submission</h2>
+		<p>
+			Completing all tasks in this lab should result in <strong>2 or more</strong> separate Java files (a linked-list implementation, plus a main-method testing class) within a single package named like <samp>LastnameFirstname_lab4</samp>. Do not include the <code>List</code> or <code>Stack</code> interfaces in your submission. Compress the package directory into a ZIP archive and upload it to the D2L assignment.
+		</p>
+		<p>
+			The marks for this lab are heavily weighted towards good coding practice and style. Pay attention to your code formatting, make sure you have documented all public members using JavaDoc, and make sure you are using constants, arrays, loops, and methods effectively.
+		</p>
+		<p>
+			<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can help one another with problems and questions, but in the end everyone must do their own work.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Programs compile and run without error</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Good coding style</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Task requirements met or exceeded</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Total</th>
+					<td>6</td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+
+	<script src="../template/bundle.js" async defer></script>
+	<!-- additional scripts can be added here if necessary -->
+</body>
+</html>
