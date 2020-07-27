@@ -28,3 +28,4 @@ Prism.languages.java=Prism.languages.extend("clike",{keyword:/\b(?:var|abstract|
 {% include_relative fix-fragments.js %}
 {% include_relative wrap-urls.js %}
 {% include_relative sample-loader.js %}
+{% include_relative api-loader.js %}

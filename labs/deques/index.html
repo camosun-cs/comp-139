@@ -7,31 +7,6 @@
 	<base href="https://camosun-cs.github.io/comp-139/labs/deques/" target="_blank"/>
 	<link rel="stylesheet" href="../template/bundle.css"/>
 	<style>
-		.api-frame {
-			box-sizing: border-box;
-			width: 100%;
-			height: 20em;
-			max-height: 90vh;
-			border: inset;
-		}
-		.api-linkbar {
-			display: flex;
-			flex-direction: row-reverse;
-			justify-content: space-between;
-			align-items: flex-start;
-		}
-		.api-popout, .api-download {
-			padding: 0 0.5em;
-			border-bottom-right-radius: 0.5em;
-			border-bottom-left-radius: 0.5em;
-			font-size: smaller;
-			background: rgba(0, 0, 0, 0.05);
-		}
-		.icon {
-			width: 0.8em;
-			height: 0.8em;
-			vertical-align: baseline;
-		}
 		.bonus {
 			font-size: 0.8em;
 			padding: 0.1em 0.4em;
@@ -44,28 +19,6 @@
 	</style>
 </head>
 <body>
-	<svg style="display:none">
-		<symbol id="icon-popout" viewBox="0 0 768 768">
-			<desc>arrow pointing out of box</desc>
-			<path d="M584 664H104V184h216V80H0v688h688V448H584zM384 0l132 132-240 240 120 120 240-240 132 132V0z" fill="currentColor"/>
-		</symbol>
-		<symbol id="icon-download" viewBox="0 0 688 768">
-			<desc>arrow pointing into tray</desc>
-			  <path d="M619 309H432V0H262v309H75l272 272z" fill="currentColor"/>
-			  <path d="M584 664H104V448H0v320h688V448H584z" fill="currentColor"/>
-		</symbol>
-	</svg>
-	<template id="popout">
-		<a target="_blank" class="api-popout">
-			<span>Open in new window</span>
-			<svg class="icon"><use href="#icon-popout" /></svg>
-		</a>
-	</template>
-	<template id="download">
-		<a download class="api-download">
-			<span>Download interface</span>
-		</a>
-	</template>
 	<header>
 		<h1>COMP 139 - Lab 3 - Stacks, Queues, and Generics</h1>
 		<nav><ol>
@@ -170,39 +123,5 @@
 	</section>
 
 	<script src="../template/bundle.js" async defer></script>
-	<script type="module">
-		const popoutTemplate = document.getElementById('popout')
-		const downloadTemplate = document.getElementById('download')
-		for (let figureEl of document.querySelectorAll('.api')) {
-			const docLink = figureEl.querySelector('.api-doc')
-			const interfaceLink = figureEl.querySelector('.api-interface')
-			// create iframe for documentation
-			// <iframe src="<href>" class="api-frame"></iframe>
-			const viewer = document.createElement('iframe')
-			viewer.onload = () => {
-				const api = viewer.contentDocument
-				for (let link of api.querySelectorAll('.externalLink')) {
-					link.target = '_blank'
-				}
-			}
-			viewer.src = docLink.href
-			viewer.className = 'api-frame'
-			// create utility links
-			const linkbar = document.createElement('div')
-			linkbar.className = 'api-linkbar'
-			const popout = popoutTemplate.content.cloneNode(true).firstElementChild
-			popout.href = docLink.href
-			linkbar.appendChild(popout)
-			const download = downloadTemplate.content.cloneNode(true).firstElementChild
-			download.href = interfaceLink.href
-			linkbar.appendChild(download)
-			// remove existing links
-			figureEl.removeChild(docLink)
-			figureEl.removeChild(interfaceLink)
-			// add the viewer and linkbar
-			figureEl.appendChild(viewer)
-			figureEl.appendChild(linkbar)
-		}
-	</script>
 </body>
 </html>
