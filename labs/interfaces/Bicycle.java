@@ -1,6 +1,6 @@
 /**
  * A bicycle.
- * @author Maxwell Terpstra <C0380979@intra.camosun.bc.ca>
+ * @author {@code Maxwell Terpstra <C0380979@intra.camosun.bc.ca>}
  */
 public class Bicycle {
     private final int speeds;

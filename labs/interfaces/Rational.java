@@ -24,7 +24,7 @@ import java.util.Objects;
  *
  * @see <a href="https://en.wikipedia.org/wiki/Rational_number">Wikipedia
  *     definition of Rational number</a>
- * @author Maxwell Terpstra <C0380979@intra.camosun.bc.ca>
+ * @author {@code Maxwell Terpstra <C0380979@intra.camosun.bc.ca>}
  */
 public class Rational extends Number implements Comparable<Rational> {
     private final BigInteger numerator;

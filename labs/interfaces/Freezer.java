@@ -1,6 +1,6 @@
 /**
  * A stand-alone freezer unit.
- * @author Maxwell Terpstra <C0380979@intra.camosun.bc.ca>
+ * @author {@code Maxwell Terpstra <C0380979@intra.camosun.bc.ca>}
  */
 public class Freezer {
     public enum Size {
