@@ -36,21 +36,24 @@
 			<li>lists and arrays</li>
 		</ul>
 		<p>This assignment makes use of classes that you created in <a href="../review/">Lab 1</a> and <a href="../interfaces/">Lab 3</a>. However, to make that sure your solution will run when it is marked and to avoid problems related to incomplete or incorrect old code, we recommend that you use the solution classes provided in <a href="../LabTests.jar" download>LabTests.jar</a> (eg. <samp>ca.camosun<wbr/>.comp139<wbr/>.solution<wbr/>.lab3.Rational</samp>).</p>
+		<!--<aside>
+			Hint: <samp>ca.camosun<wbr/>.comp139<wbr/>.test.Lab5</samp> (from LabTests.jar) will be used by the marker to test that your code runs correctly. You can also use it to check your solutions before handing them in!
+		</aside>-->
 	</section>
 
 	<section id="task1">
 		<h2>Task 1: Built-in Sorting and Comparators</h2>
-		<p>Write a main program that uses the collections framework to solve each of the following problems.</p>
+		<p>Write a program that uses the collections framework to solve each of the following problems.</p>
 		<ol class="instructions">
 			<li>Given a list of <code class="language-java">Rational</code> objects, find the smallest valued element.</li>
 			<li>Given a list of <code class="language-java">String</code> values, find the one that is last in lexicographic order.</li>
-			<li>Given an array of <code class="language-java">double</code> values, find the maximum.</li>
+			<li>Given an array of <code class="language-java">Double</code> values, find the maximum.</li>
 			<li>Given a list of <code class="language-java">Person</code> objects, sort them by <samp>surname</samp> in lexicographic order.</li>
-			<li>Given a list of <code class="language-java">Employee</code> objects, sort them by their salaries (lowest first) and sort employees with the same salary by surname in lexicographic order.</li>
-			<li>Given a list of <code class="language-java">Employee</code> objects, find the one whose surname is last in lexicographic order within the group of highest-paid employees.</li>
-			<li>Given a list of <code class="language-java">Patient</code> objects, find the one whose surname is first in lexicographic order within the group of patients who have not been assigned a physician (ie. <code class="language-java">that.physician == null</code>).</li>
+			<li>Given a list of <code class="language-java">Employee</code> objects, sort them by their salaries (lowest first), and then sort groups of employees with the same salary by surname in lexicographic order.</li>
+			<li>Given a list of <code class="language-java">Employee</code> objects, find the one with the highest salary. In case of a tie, return the one whose surname comes first in lexicographic order.</li>
+			<li>Given a list of <code class="language-java">Patient</code> objects, find a patient that does not have an assigned physician (ie. physician is <samp>null</samp>). If there is more than one, return the one whose surname comes first in lexicographic order.</li>
 		</ol>
-		<p>Your solution for each problem should work for <em>any</em> valid input list or array. However, your main method only needs to show one example of each.</p>
+		<p>Write your solution for each problem as a <strong>separate</strong> single-argument static method. Call these from your main method with some example data to prove that they work properly. Your solutions should work for <em>any</em> valid input list or array, but your main method only needs to show one example of each.</p>
 		<p>To solve these problems, you will likely need to use:</p>
 		<ul>
 			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Arrays.html#asList(T...)">Arrays#asList(T...)</a></samp></li>
@@ -58,16 +61,14 @@
 			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Collections.html#max(java.util.Collection,java.util.Comparator)">Collections#max(Collection, Comparator)</a></samp></li>
 			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Collections.html#min(java.util.Collection)">Collections#min(Collection)</a></samp></li>
 			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Collections.html#min(java.util.Collection,java.util.Comparator)">Collections#min(Collection, Comparator)</a></samp></li>
+			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#comparing(java.util.function.Function)">Comparator#comparing(Function)</a></samp></li>
 			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#comparingInt(java.util.function.ToIntFunction)">Comparator#comparingInt(ToIntFunction)</a></samp></li>
-			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#naturalOrder()">Comparator#naturalOrder()</a></samp></li>
-			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#reversed()">Comparator#reversed()</a></samp></li>
 			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#reverseOrder()">Comparator#reverseOrder()</a></samp></li>
-			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#thenComparing(java.util.Comparator)">Comparator#thenComparing(Comparator)</a></samp></li>
+			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#thenComparing(java.util.function.Function,java.util.Comparator)">Comparator#thenComparing(Function)</a></samp></li>
+			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Comparator.html#thenComparing(java.util.Comparator)">Comparator#thenComparing(Function, Comparator)</a></samp></li>
 			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/List.html#sort(java.util.Comparator)">List#sort(Comparator)</a></samp></li>
+			<li><samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/List.html#sort(java.util.Comparator)">List#sort(Comparator)</a></samp> (or <samp><a href="https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Collections.html#sort(java.util.List,java.util.Comparator)">Collections#sort(List, Comparator)</a></samp>)</li>
 		</ul>
-		<aside>
-			Hint: implement each problem solution as a method so that you can check that they are working correctly using <code class="language-java">ca.camosun<wbr/>.comp139<wbr/>.test.Lab5</code> from <a href="../LabTests.jar" download>LabTests.jar</a>.
-		</aside>
 	</section>
 
 	<section id="task2">
@@ -87,7 +88,7 @@
 				<aside>
 					Hint: think about which particular arrangments of data would require the <em>least</em> and <em>most</em> amount of work for your sorting algorithm to rearrange.
 				</aside>
-				<p>Use <samp>ca.camosun<wbr/>.comp139<wbr/>.test.Lab5#measureSortTime</samp> to benchmark your solution and the equivalent solution using <samp>Collections#sort</samp>.</p>
+				<!--<p>Use <samp>ca.camosun<wbr/>.comp139<wbr/>.test.Lab5#measureSortTime</samp> to benchmark your solution and the equivalent solution using <samp>Collections#sort</samp>.</p>-->
 			</li>
 		</ol>
 	</section>
