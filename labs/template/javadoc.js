@@ -51,12 +51,17 @@ function updateTabs(type) {
 }
 
 function switchTab(e) {
+    var t;
     if (e.keyCode == 37 || e.keyCode == 38) {
-        $("[aria-selected=true]").prev().click().focus();
+        t = document.querySelector("[aria-selected=true]").previousElementSibling;
         e.preventDefault();
     }
     if (e.keyCode == 39 || e.keyCode == 40) {
-        $("[aria-selected=true]").next().click().focus();
+        t = document.querySelector("[aria-selected=true]").nextElementSibling;
         e.preventDefault();
+    }
+    if (t) {
+        t.click();
+        t.focus();
     }
 }
