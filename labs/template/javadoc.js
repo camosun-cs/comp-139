@@ -2,18 +2,6 @@
  * Copyright (c) 2013, 2018, Oracle and/or its affiliates. All rights reserved.
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
-var moduleSearchIndex;
-var packageSearchIndex;
-var typeSearchIndex;
-var memberSearchIndex;
-var tagSearchIndex;
-function createElem(doc, tag, path) {
-    var script = doc.createElement(tag);
-    var scriptElement = doc.getElementsByTagName(tag)[0];
-    script.src = pathtoroot + path;
-    scriptElement.parentNode.insertBefore(script, scriptElement);
-}
-
 function show(type) {
     count = 0;
     for (var key in data) {
