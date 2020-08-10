@@ -444,6 +444,21 @@ figure {
 	margin-right: 0;
 }
 
+//~~~~~~~~~~~~~
+//  Bonus tag
+//~~~~~~~~~~~~~
+// use like:
+// <span class="bonus">bonus</span>
+.bonus {
+	font-size: 0.8em;
+	padding: 0.1em 0.4em;
+	border-radius: 0.5em;
+	background-color: #eef;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+	border: 1px solid #ccf;
+	text-transform: uppercase;
+}
+
 //~~~~~~~~~~~~~~~
 //  UML Diagrams
 //~~~~~~~~~~~~~~~~
