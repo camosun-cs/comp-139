@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>TreeNode (COMP 139 at Camosun)</title>
+<meta charset="utf-8"/>
+<meta name="dc.created" content="2020-08-09">
+<meta name="description" content="declaration: package: examples, interface: TreeNode">
+<meta name="generator" content="javadoc/ClassWriterImpl">
+<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css" title="Style">
+<script src="https://camosun-cs.github.io/comp-139/labs/template/javadoc.js"></script>
+</head>
+<body class="class-declaration">
+<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script>
+<div class="flexBox">
+<header role="banner" class="flexHeader">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="skipNav"><a id="skip.navbar.top">
+<!--   -->
+</a></div>
+</nav>
+</header>
+<div class="flexContent">
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;examples</div>
+<h1 title="Interface TreeNode" class="title">Interface TreeNode&lt;E&gt;</h1>
+</div>
+<div class="contentContainer">
+<section class="description">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>E</code> - type of stored element</dd>
+</dl>
+<hr>
+<pre>public interface <span class="typeNameLabel">TreeNode&lt;E&gt;</span></pre>
+<div class="block">A node in a binary tree. Each node stores a single element and links
+ to left, right, and parent nodes.
+
+ <p>Note that TreeNodes have a <a href="#getParent()"><code>getParent()</code></a> method, but no
+ corresponding <code>setParent</code>. The parent of a node should only ever be
+ changed indirectly by invoking the parent node's <a href="#setLeft(examples.TreeNode)"><code>setLeft(TreeNode)</code></a>
+ or <a href="#setRight(examples.TreeNode)"><code>setRight(TreeNode)</code></a> method.</p></div>
+</section>
+<section class="summary">
+<ul class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<li class="blockList">
+<section class="methodSummary"><a id="method.summary">
+<!--   -->
+</a>
+<h2>Method Summary</h2>
+<div class="memberSummary">
+<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="tableTab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="memberSummary_tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t3" class="tableTab" onclick="show(4);">Abstract Methods</button></div>
+<div id="memberSummary_tabpanel" role="tabpanel">
+<table aria-labelledby="t0">
+<thead>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="altColor" id="i0">
+<td class="colFirst"><code><a href="TreeNode.html" title="type parameter in TreeNode">E</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContent()">getContent</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the value stored in this node.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLeft()">getLeft</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the left child node.</div>
+</td>
+</tr>
+<tr class="altColor" id="i2">
+<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParent()">getParent</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the parent of this node.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i3">
+<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRight()">getRight</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the right child node.</div>
+</td>
+</tr>
+<tr class="altColor" id="i4">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLeaf()">isLeaf</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns true if this is a leaf node.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i5">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setContent()">setContent</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Change the value stored in this node.</div>
+</td>
+</tr>
+<tr class="altColor" id="i6">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLeft(examples.TreeNode)">setLeft</a></span>&#8203;(<a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</code></th>
+<td class="colLast">
+<div class="block">Change the left child to the given node.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i7">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRight(examples.TreeNode)">setRight</a></span>&#8203;(<a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</code></th>
+<td class="colLast">
+<div class="block">Change the right child to the given node.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<li class="blockList">
+<section class="methodDetails"><a id="method.detail">
+<!--   -->
+</a>
+<h2>Method Details</h2>
+<ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="getContent()">getContent</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="type parameter in TreeNode">E</a></span>&nbsp;<span class="memberName">getContent</span>()</div>
+<div class="block">Get the value stored in this node.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the stored content</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setContent()">setContent</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setContent</span>()</div>
+<div class="block">Change the value stored in this node.</div>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getLeft()">getLeft</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</span>&nbsp;<span class="memberName">getLeft</span>()</div>
+<div class="block">Get the left child node.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the left child, or null</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setLeft(examples.TreeNode)">setLeft</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setLeft</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</span></div>
+<div class="block">Change the left child to the given node. Also updates the child's
+ parent link to refer back to this node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>child</code> - new left child</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getRight()">getRight</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</span>&nbsp;<span class="memberName">getRight</span>()</div>
+<div class="block">Get the right child node.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the right child, or null</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setRight(examples.TreeNode)">setRight</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setRight</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</span></div>
+<div class="block">Change the right child to the given node. Also updates the child's parent
+ link to refer back to this node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>child</code> - new right node</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getParent()">getParent</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</span>&nbsp;<span class="memberName">getParent</span>()</div>
+<div class="block">Get the parent of this node.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the parent node, or null</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="isLeaf()">isLeaf</a></h3>
+<div class="memberSignature"><span class="returnType">boolean</span>&nbsp;<span class="memberName">isLeaf</span>()</div>
+<div class="block">Returns true if this is a leaf node. A leaf node has no left or right
+ child</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>false if this node has a left or right child; true otherwise</dd>
+</dl>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+<footer role="contentinfo">
+<nav role="navigation">
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+</div>
+<a id="skip.navbar.bottom">
+<!--   -->
+</a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+</nav>
+</footer>
+</div>
+</div>
+</body>
+</html>

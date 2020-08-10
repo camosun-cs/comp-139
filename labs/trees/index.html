@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<meta charset="utf-8">
+	<title>Trees and Recursion (Lab 6) - COMP 139</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="https://camosun-cs.github.io/comp-139/labs/trees/" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
+</head>
+<body>
+	<header>
+		<h1>COMP 139 - Lab 6 - Trees and Recursion</h1>
+		<nav><ol>
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<li><a href="#task1"><strong>Task 1</strong>: Tree Node</a></li>
+			<li><a href="#task2"><strong>Task 2</strong>: Unbalanced Tree</a></li>
+			<li><a href="#task3"><strong>Task 3</strong>: AVL Tree</a></li>
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>In this lab assignment you will create your own binary search tree class. In the process you will practice what you've learned about:</p>
+		<ul>
+			<li>binary search trees</li>
+			<li>recursion</li>
+			<li>balanced and unbalanced trees</li>
+			<li>non-linear collections</li>
+			<li>linked data structures</li>
+			<li>generics</li>
+		</ul>
+		<p>Make sure you test your code as you progress through the assignment. There is no "main program" required for this lab, so effective testing will be essential to ensure that your code is correct.</p>
+		<aside>Note: the LabTests.jar has been updated to include all interfaces from this assignment and additional testing tools.</aside>
+	</section>
+
+	<section id="task1">
+		<h2>Task 1: Tree Node</h2>
+		<p>Create an implementation of the <code>examples.TreeNode</code> interface.</p>
+		<aside>Hint: the <samp>ca<wbr/>.camosun<wbr/>.comp139<wbr/>.test<wbr/>.lab6<wbr/>.NodeVisualizer</samp> class from LabTests.jar can show you a graphical representation of your node and any other nodes that it links to.</aside>
+		<figure class="api">
+			<a class="api-doc" href="TreeNode.html">Javadoc</a>
+			<a class="api-interface" href="TreeNode.java" download>interface file</a>
+		</figure>
+	</section>
+
+	<section id="task2">
+		<h2>Task 2: Unbalanced Tree</h2>
+		<p>Create an unbalanced binary tree class that is an implementation of the <code>examples.BinaryTree</code> interface.</p>
+		<aside>Hint: the <samp>ca<wbr/>.camosun<wbr/>.comp139<wbr/>.test<wbr/>.lab6<wbr/>.TreeVisualizer</samp> class from LabTests.jar can show you a graphical representation of your tree and allow you to add and remove elements interactively.</aside>
+		<figure class="api">
+			<a class="api-doc" href="BinaryTree.html">Javadoc</a>
+			<a class="api-interface" href="BinaryTree.java" download>interface file</a>
+		</figure>
+	</section>
+
+	<section id="task3">
+		<h2>Task 3: AVL Tree</h2>
+		<ol class="instructions">
+			<li>
+				<p>Change your binary tree class to implement the <samp>examples.AVLTree</samp> interface instead of <samp>examples.BinaryTree</samp>.</p>
+				<aside>Once you make this switch, the <samp>TreeVisualizer</samp> tool will show additional information about subtree balance.</aside>
+				<figure class="api">
+					<a class="api-doc" href="AVLTree.html">Javadoc</a>
+					<a class="api-interface" href="AVLTree.java" download>interface file</a>
+				</figure>
+			</li>
+			<li>Modify your <code>TreeNode</code> and <code>BinaryTree</code> implementations as necessary in order to make your tree self-balancing.</li>
+		</ol>
+	</section>
+
+	<section id="submission">
+		<h2>Submission</h2>
+		<p>
+			Completing all tasks in this lab should result in <strong>at least two</strong> Java files within a single package named like <samp>LastnameFirstname_lab6</samp>. A main method class is not required. Compress the package directory into a ZIP archive and upload it to the D2L assignment.
+		</p>
+		<p>
+			The marks for this lab are heavily weighted towards good coding practice and style. Pay attention to your code formatting, make sure you have documented all public members using JavaDoc, and make sure you are using constants, arrays, loops, and methods effectively.
+		</p>
+		<p>
+			<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can help one another with problems and questions, but in the end everyone must do their own work.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Programs compile and run without error</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Good coding style</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Task requirements met or exceeded</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Total</th>
+					<td>6</td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+
+	<script src="../template/bundle.js" async defer></script>
+</body>
+</html>

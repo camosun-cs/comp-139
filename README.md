@@ -7,5 +7,5 @@ Course materials for COMP139 at Camosun College
 1. [Stacks, Queues, Deques, and Generics](labs/deques)
 1. [Linked Lists](labs/linked-lists)
 1. [Collections and Comparators](labs/collections)
-1. Trees, Graphs, and Recursion
+1. [Trees and Recursion](labs/trees)
 1. Final Project
