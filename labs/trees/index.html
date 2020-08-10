@@ -14,7 +14,7 @@
 			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
 			<li><a href="#task1"><strong>Task 1</strong>: Tree Node</a></li>
 			<li><a href="#task2"><strong>Task 2</strong>: Unbalanced Tree</a></li>
-			<li><a href="#task3"><strong>Task 3</strong>: AVL Tree</a></li>
+			<li><a href="#task3"><strong>Task 3</strong>: AVL Tree</a> <span class="bonus">bonus</span></li>
 			<li><a href="#submission">Submission</a></li>
 		</ol></nav>
 	</header>
@@ -42,6 +42,11 @@
 			<a class="api-doc" href="TreeNode.html">Javadoc</a>
 			<a class="api-interface" href="TreeNode.java" download>interface file</a>
 		</figure>
+		<p>The second type parameter to this interface is somewhat unusual. It is set up this way to allow you to restrict the types of nodes that your implementation can link to. Most likely, you only want your node class to link to other nodes of the same class! You can enforce this by implementing the interface like this:</p>
+		<pre><code class="language-java">
+			class MyNode&lt;E> implements TreeNode&lt;E, MyNode&lt;E>> { }
+		</code></pre>
+		<p>As an extra side-effect, the <samp>getLeft()</samp>, <samp>getRight()</samp>, and <samp>getParent()</samp> methods will return <em>your class</em> instead of the interface. This will make working with your nodes in <a href="#task3">Task 3</a> a little simpler, since you'll have direct access to any extra properties you add even when using these getters.</p>
 	</section>
 
 	<section id="task2">
@@ -52,20 +57,31 @@
 			<a class="api-doc" href="BinaryTree.html">Javadoc</a>
 			<a class="api-interface" href="BinaryTree.java" download>interface file</a>
 		</figure>
+		<p>The type parameter for this interface looks a little daunting, but it's just making sure that any content you add to the tree can be sorted. A non-generic implementation of this interface that held Strings would look like:</p>
+		<pre><code class="language-java">
+			class MyTree extends BinaryTree&lt;String> { }
+		</code></pre>
+		<p>A generic implementation of this interface that can hold any Comparable object type would look like:</p>
+		<pre><code class="language-java">
+			class MyTree&lt;E extends Comparable&lt;? super E>> implements BinaryTree&lt;E> { }
+		</code></pre>
 	</section>
 
 	<section id="task3">
-		<h2>Task 3: AVL Tree</h2>
+		<h2>Task 3: AVL Tree <span class="bonus">bonus</span></h2>
 		<ol class="instructions">
 			<li>
-				<p>Change your binary tree class to implement the <samp>examples.AVLTree</samp> interface instead of <samp>examples.BinaryTree</samp>.</p>
+				<p>Change your binary tree class to implement the <a href="BalancedBTree.java" download><samp>examples.BalancedBTree</samp></a> interface instead of <samp>examples.BinaryTree</samp>.</p>
 				<aside>Once you make this switch, the <samp>TreeVisualizer</samp> tool will show additional information about subtree balance.</aside>
-				<figure class="api">
-					<a class="api-doc" href="AVLTree.html">Javadoc</a>
-					<a class="api-interface" href="AVLTree.java" download>interface file</a>
-				</figure>
+				<details>
+					<summary>BalancedBTree does not add any new methods&hellip;</summary>
+					<figure class="api">
+						<a class="api-doc" href="BalancedBTree.html">Javadoc</a>
+						<a class="api-interface" href="BalancedBTree.java" download>interface file</a>
+					</figure>
+				</details>
 			</li>
-			<li>Modify your <code>TreeNode</code> and <code>BinaryTree</code> implementations as necessary in order to make your tree self-balancing.</li>
+			<li>Modify your <code>TreeNode</code> and <code>BinaryTree</code> implementations to perform the self-balancing behaviour of an AVL tree.</li>
 		</ol>
 	</section>
 

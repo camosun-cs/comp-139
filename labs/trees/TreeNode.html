@@ -3,14 +3,14 @@
 <head>
 <title>TreeNode (COMP 139 at Camosun)</title>
 <meta charset="utf-8"/>
-<meta name="dc.created" content="2020-08-09">
+<meta name="dc.created" content="2020-08-10">
 <meta name="description" content="declaration: package: examples, interface: TreeNode">
 <meta name="generator" content="javadoc/ClassWriterImpl">
-<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css" title="Style">
+<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css">
 <script src="https://camosun-cs.github.io/comp-139/labs/template/javadoc.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6};
+<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -49,23 +49,21 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;examples</div>
-<h1 title="Interface TreeNode" class="title">Interface TreeNode&lt;E&gt;</h1>
+<h1 title="Interface TreeNode" class="title">Interface TreeNode&lt;E,&#8203;T extends TreeNode&lt;E,&#8203;?&gt;&gt;</h1>
 </div>
 <div class="contentContainer">
 <section class="description">
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
-<dd><code>E</code> - type of stored element</dd>
+<dd><code>E</code> - type of stored elements</dd>
+<dd><code>T</code> - TreeNode type that is valid to link to</dd>
 </dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">TreeNode&lt;E&gt;</span></pre>
-<div class="block">A node in a binary tree. Each node stores a single element and links
- to left, right, and parent nodes.
-
- <p>Note that TreeNodes have a <a href="#getParent()"><code>getParent()</code></a> method, but no
- corresponding <code>setParent</code>. The parent of a node should only ever be
- changed indirectly by invoking the parent node's <a href="#setLeft(examples.TreeNode)"><code>setLeft(TreeNode)</code></a>
- or <a href="#setRight(examples.TreeNode)"><code>setRight(TreeNode)</code></a> method.</p></div>
+<pre>public interface <span class="typeNameLabel">TreeNode&lt;E,&#8203;T extends TreeNode&lt;E,&#8203;?&gt;&gt;</span></pre>
+<div class="block">A node in a binary tree. Each non-leaf ("internal") node stores a single
+ element and links to left, right, and parent nodes. Leaf nodes do not store
+ content or have left or right links. Implementers may choose to represent
+ leaf nodes using <code>null</code> references, or as normal TreeNode instances.</div>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -95,21 +93,21 @@ var activeTableTab = "activeTableTab";
 </td>
 </tr>
 <tr class="rowColor" id="i1">
-<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</code></td>
+<td class="colFirst"><code><a href="TreeNode.html" title="type parameter in TreeNode">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLeft()">getLeft</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the left child node.</div>
 </td>
 </tr>
 <tr class="altColor" id="i2">
-<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</code></td>
+<td class="colFirst"><code><a href="TreeNode.html" title="type parameter in TreeNode">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParent()">getParent</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the parent of this node.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i3">
-<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</code></td>
+<td class="colFirst"><code><a href="TreeNode.html" title="type parameter in TreeNode">T</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRight()">getRight</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the right child node.</div>
@@ -124,21 +122,28 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr class="rowColor" id="i5">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setContent()">setContent</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setContent(E)">setContent</a></span>&#8203;(<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Change the value stored in this node.</div>
 </td>
 </tr>
 <tr class="altColor" id="i6">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLeft(examples.TreeNode)">setLeft</a></span>&#8203;(<a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLeft(T)">setLeft</a></span>&#8203;(<a href="TreeNode.html" title="type parameter in TreeNode">T</a>&nbsp;child)</code></th>
 <td class="colLast">
 <div class="block">Change the left child to the given node.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i7">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRight(examples.TreeNode)">setRight</a></span>&#8203;(<a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParent(T)">setParent</a></span>&#8203;(<a href="TreeNode.html" title="type parameter in TreeNode">T</a>&nbsp;parent)</code></th>
+<td class="colLast">
+<div class="block">Change the parent of this node.</div>
+</td>
+</tr>
+<tr class="altColor" id="i8">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRight(T)">setRight</a></span>&#8203;(<a href="TreeNode.html" title="type parameter in TreeNode">T</a>&nbsp;child)</code></th>
 <td class="colLast">
 <div class="block">Change the right child to the given node.</div>
 </td>
@@ -168,70 +173,106 @@ var activeTableTab = "activeTableTab";
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the stored content</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - (optional) if this is a leaf node</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="setContent()">setContent</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setContent</span>()</div>
+<h3><a id="setContent(java.lang.Object)">
+<!--   -->
+</a><a id="setContent(E)">setContent</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setContent</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="type parameter in TreeNode">E</a>&nbsp;value)</span></div>
 <div class="block">Change the value stored in this node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - new content to store</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - if this is a leaf node</dd>
+</dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="getLeft()">getLeft</a></h3>
-<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</span>&nbsp;<span class="memberName">getLeft</span>()</div>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="type parameter in TreeNode">T</a></span>&nbsp;<span class="memberName">getLeft</span>()</div>
 <div class="block">Get the left child node.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the left child, or null</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - (optional) if this is a leaf node</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="setLeft(examples.TreeNode)">setLeft</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setLeft</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</span></div>
-<div class="block">Change the left child to the given node. Also updates the child's
- parent link to refer back to this node.</div>
+<h3><a id="setLeft(examples.TreeNode)">
+<!--   -->
+</a><a id="setLeft(T)">setLeft</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setLeft</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="type parameter in TreeNode">T</a>&nbsp;child)</span></div>
+<div class="block">Change the left child to the given node.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>child</code> - new left child</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - if this is a leaf node</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="getRight()">getRight</a></h3>
-<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</span>&nbsp;<span class="memberName">getRight</span>()</div>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="type parameter in TreeNode">T</a></span>&nbsp;<span class="memberName">getRight</span>()</div>
 <div class="block">Get the right child node.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the right child, or null</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - (optional) if this is a leaf node</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
-<h3><a id="setRight(examples.TreeNode)">setRight</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setRight</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;&nbsp;child)</span></div>
-<div class="block">Change the right child to the given node. Also updates the child's parent
- link to refer back to this node.</div>
+<h3><a id="setRight(examples.TreeNode)">
+<!--   -->
+</a><a id="setRight(T)">setRight</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setRight</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="type parameter in TreeNode">T</a>&nbsp;child)</span></div>
+<div class="block">Change the right child to the given node.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>child</code> - new right node</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - if this is a leaf node</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="getParent()">getParent</a></h3>
-<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="TreeNode.html" title="type parameter in TreeNode">E</a>&gt;</span>&nbsp;<span class="memberName">getParent</span>()</div>
-<div class="block">Get the parent of this node.</div>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="type parameter in TreeNode">T</a></span>&nbsp;<span class="memberName">getParent</span>()</div>
+<div class="block">Get the parent of this node. The parent of a leaf node is always a
+ non-leaf node.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the parent node, or null</dd>
+<dd>the parent node</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setParent(examples.TreeNode)">
+<!--   -->
+</a><a id="setParent(T)">setParent</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setParent</span>&#8203;(<span class="arguments"><a href="TreeNode.html" title="type parameter in TreeNode">T</a>&nbsp;parent)</span></div>
+<div class="block">Change the parent of this node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parent</code> - the new parent node</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - if this is a leaf node</dd>
 </dl>
 </section>
 </li>
@@ -239,11 +280,13 @@ var activeTableTab = "activeTableTab";
 <section class="detail">
 <h3><a id="isLeaf()">isLeaf</a></h3>
 <div class="memberSignature"><span class="returnType">boolean</span>&nbsp;<span class="memberName">isLeaf</span>()</div>
-<div class="block">Returns true if this is a leaf node. A leaf node has no left or right
- child</div>
+<div class="block">Returns true if this is a leaf node. Leaf nodes do not hold content and
+ cannot have children. Implementers may choose to represent leaf nodes
+ as <code>null</code> references, in which case this method will always return
+ false.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>false if this node has a left or right child; true otherwise</dd>
+<dd>true if this is a leaf node; false otherwise</dd>
 </dl>
 </section>
 </li>

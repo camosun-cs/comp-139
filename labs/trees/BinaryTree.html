@@ -3,10 +3,10 @@
 <head>
 <title>BinaryTree (COMP 139 at Camosun)</title>
 <meta charset="utf-8"/>
-<meta name="dc.created" content="2020-08-09">
+<meta name="dc.created" content="2020-08-10">
 <meta name="description" content="declaration: package: examples, interface: BinaryTree">
 <meta name="generator" content="javadoc/ClassWriterImpl">
-<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css" title="Style">
+<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css">
 <script src="https://camosun-cs.github.io/comp-139/labs/template/javadoc.js"></script>
 </head>
 <body class="class-declaration">
@@ -59,7 +59,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
-<dd><code><a href="AVLTree.html" title="interface in examples">AVLTree</a>&lt;E&gt;</code></dd>
+<dd><code><a href="BalancedBTree.html" title="interface in examples">BalancedBTree</a>&lt;E&gt;</code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">BinaryTree&lt;E extends java.lang.Comparable&lt;? super E&gt;&gt;</span></pre>
@@ -130,7 +130,7 @@ var activeTableTab = "activeTableTab";
 </td>
 </tr>
 <tr class="altColor" id="i6">
-<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&gt;</code></td>
+<td class="colFirst"><code><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>,&#8203;?&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rootNode()">rootNode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the node at the base of this tree.</div>
@@ -163,7 +163,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <section class="detail">
 <h3><a id="rootNode()">rootNode</a></h3>
-<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&gt;</span>&nbsp;<span class="memberName">rootNode</span>()</div>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in examples">TreeNode</a>&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>,&#8203;?&gt;</span>&nbsp;<span class="memberName">rootNode</span>()</div>
 <div class="block">Get the node at the base of this tree.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -189,22 +189,28 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <section class="detail">
 <h3><a id="min()">min</a></h3>
-<div class="memberSignature"><span class="returnType"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></span>&nbsp;<span class="memberName">min</span>()</div>
+<div class="memberSignature"><span class="returnType"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></span>&nbsp;<span class="memberName">min</span>()
+throws <span class="exceptions">java.util.NoSuchElementException</span></div>
 <div class="block">Find the smallest value stored in the tree.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the minimum value in this collection</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.util.NoSuchElementException</code> - if the tree is empty</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="max()">max</a></h3>
-<div class="memberSignature"><span class="returnType"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></span>&nbsp;<span class="memberName">max</span>()</div>
+<div class="memberSignature"><span class="returnType"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></span>&nbsp;<span class="memberName">max</span>()
+throws <span class="exceptions">java.util.NoSuchElementException</span></div>
 <div class="block">Find the largest value stored in the tree.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the maximum value in this collection</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.util.NoSuchElementException</code> - if the tree is empty</dd>
 </dl>
 </section>
 </li>
@@ -254,7 +260,11 @@ var activeTableTab = "activeTableTab";
 <section class="detail">
 <h3><a id="height()">height</a></h3>
 <div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">height</span>()</div>
-<div class="block">Measure the height of the tree.</div>
+<div class="block">Measure the height of the tree. A tree with a <a href="#size()"><code>size()</code></a> of
+ <samp>0</samp> will have a height of <samp>0</samp>, and a tree with a
+ <a href="#size()"><code>size()</code></a> of <samp>1</samp> will have a height of <samp>1</samp>.
+ Otherwise, the height will be an implementation defined value between
+ <samp>1</samp> and <a href="#size()"><code>size()</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the number of steps from the root to the furthest leaf node</dd>

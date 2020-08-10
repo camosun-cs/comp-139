@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>AVLTree (COMP 139 at Camosun)</title>
+<title>BalancedBTree (COMP 139 at Camosun)</title>
 <meta charset="utf-8"/>
-<meta name="dc.created" content="2020-08-09">
-<meta name="description" content="declaration: package: examples, interface: AVLTree">
+<meta name="dc.created" content="2020-08-10">
+<meta name="description" content="declaration: package: examples, interface: BalancedBTree">
 <meta name="generator" content="javadoc/ClassWriterImpl">
-<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css" title="Style">
+<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css">
 </head>
 <body class="class-declaration">
 <div class="flexBox">
@@ -41,7 +41,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;examples</div>
-<h1 title="Interface AVLTree" class="title">Interface AVLTree&lt;E extends java.lang.Comparable&lt;? super E&gt;&gt;</h1>
+<h1 title="Interface BalancedBTree" class="title">Interface BalancedBTree&lt;E extends java.lang.Comparable&lt;? super E&gt;&gt;</h1>
 </div>
 <div class="contentContainer">
 <section class="description">
@@ -53,13 +53,16 @@
 <dt>All Superinterfaces:</dt>
 <dd><code><a href="BinaryTree.html" title="interface in examples">BinaryTree</a>&lt;E&gt;</code></dd>
 </dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><code><a href="../ca/camosun/comp139/solution/lab6/AVLTree.html" title="class in ca.camosun.comp139.solution.lab6">AVLTree</a></code></dd>
+</dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">AVLTree&lt;E extends java.lang.Comparable&lt;? super E&gt;&gt;</span>
+<pre>public interface <span class="typeNameLabel">BalancedBTree&lt;E extends java.lang.Comparable&lt;? super E&gt;&gt;</span>
 extends <a href="BinaryTree.html" title="interface in examples">BinaryTree</a>&lt;E&gt;</pre>
 <div class="block">A height-balanced binary search tree. This is a <em>marker interface</em>
  that does not introduce any new methods; its use indicates that the
- implementing tree class is self-balancing. Within an AVLTree, the heights
- of the left and right branches of each node differ by at most 1.</div>
+ implementing tree class is self-balancing.</div>
 </section>
 <section class="summary">
 <ul class="blockList">
