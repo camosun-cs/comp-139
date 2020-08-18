@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<meta charset="utf-8">
+	<title>Final Project - COMP 139</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="https://camosun-cs.github.io/comp-139/labs/project/" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
+</head>
+<body>
+	<header>
+		<h1>COMP 139 - Final Project</h1>
+		<nav><ol>
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<li><a href="#task1">Task Description</a></li>
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>In this final project, you will be pulling together all of the concepts from this course to create a model of a health-care facility. In particular, you will need to use your knowledge of:</p>
+		<ul>
+			<li>queues</li>
+			<li>stacks</li>
+			<li>lists</li>
+			<li>arrays</li>
+			<li>generics</li>
+			<li>searching</li>
+			<li>sorting</li>
+			<li>object-oriented design</li>
+		</ul>
+		<p>You will need to create a few classes of your own, but you may also use any of the classes in the Java Standard Library and the LabTests.jar to support your program.</p>
+	</section>
+
+	<section id="task1">
+		<h2>Task Description</h2>
+		<p>Create a model of a health-care facility. Your program will accept lists of patients and their illnesses, provide them with treatment if possible, and output reports of the work that was done.</p>
+		<p>Your program should have a main loop to handle each "day" of work at your facility. Each iteration of the loop will read in a group of patients that arrive on that day and assign them beds, nurses, and doctors as they become available. Your main loop should continue to run until instructed to stop by the user, or until an upper limit of "days of work" is reached (at least three days).</p>
+		<p>The specifics of the implementation and exact output are up to you, but your program must satisfy the following minimum requirements:</p>
+		<ol class="instructions">
+			<li>
+				<h3>Patients</h3>
+				<ul>
+					<li>have a first and last name</li>
+					<li>are assigned an ID number by the facility, based on the order they arrive</li>
+					<li>have a health problem that may or may not be treatable by your care facility</li>
+					<li>have an "amount owing" to the health-care facility for their treatment</li>
+					<li>must be assigned beds and treated on a first-come, first-served basis</li>
+				</ul>
+			</li>
+			<li>
+				<h3>Beds</h3>
+				<p>Your facility has a limited (fixed) number of beds. Each bed:</p>
+				<ul>
+					<li>has a unique name or number to identify it</li>
+					<li>can only be assigned to one patient at a time</li>
+					<li>may be moved and used by any unit in the facility</li>
+					<li>has a dollar cost for use, which may vary from bed to bed</li>
+				</ul>
+			</li>
+			<li>
+				<h3>Staff</h3>
+				<ul>
+					<li>your facility has a limited (fixed) roster of nurses and doctors on staff</li>
+					<li>staff members belong to "units" within the facility</li>
+					<li>each unit has at least one nurse</li>
+					<li>nurses may care for any number of patients within their unit</li>
+					<li>doctors may only treat one patient at a time</li>
+					<li>doctors have a speciality that determines which illnesses they are able to treat</li>
+					<li>all employees have an annual salary that does not depend on the number or type of patients they care for</li>
+				</ul>
+				<!--<details>
+					<summary>Example staff data:</summary>
+					TODO
+				</details>-->
+			</li>
+			<li>
+				<h3>Treatment</h3>
+				<p>Before treatment, a patient must be:</p>
+				<ul>
+					<li>assigned to a bed</li>
+					<li>assigned a nurse</li>
+					<li>assigned a doctor specializing in their illness</li>
+				</ul>
+				<p>To complete their treatment, the patient must be cared for by their doctor for a <strong>minimum of 2 "days"</strong> (2 iterations of the main program loop, including the day they arrive). Once they have been treated, they are dischared from the facility and their bed may be used by other patients.</p>
+				<p>Accepting and treating patients generates income for the facility. Specifically:</p>
+				<ul>
+					<li>patients owe a small amount when they claim a bed, based on the cost of the bed</li>
+					<li>patients owe a larger amount once they have been treated and discharged</li>
+				</ul>
+			</li>
+			<li>
+				<h3>Reporting</h3>
+				<p>After your program has stopped accepting patients, it must report:</p>
+				<ul>
+					<li>The list of patients that were treated, ordered by their "amount owing" to the facility.</li>
+					<li>The list of beds that are available for new patients.</li>
+					<li>The total amount owed by patients to the facility.</li>
+					<li>The total amount the facility owes its employees.</li>
+				</ul>
+			</li>
+		</ol>
+		<p>Your solution should show your mastery of lists (used as stacks and queues), searching, and sorting.</p>
+		<p><span class="bonus">bonus</span> Add features beyond the minimum requirements and make the program your own and earn bonus points! What other interesting reports could you add? What should your program do if your facility runs out of beds?</p>
+	</section>
+
+	<section id="submission">
+		<h2>Submission</h2>
+		<p>
+			Your completed project should include a single main method class and as many supporting classes as necessary, stored within a single package named like <samp>LastnameFirstname_project</samp>. Compress the package directory into a ZIP archive and upload it to the D2L assignment.
+		</p>
+		<p>
+			The marks for this project are heavily weighted towards good coding practice and style. <strong>Your code for handling input, processing data, and showing output must be clearly separated from one another.</strong> Pay attention to your code formatting, make sure you have documented all public members using JavaDoc, and make sure you are using data structures and methods.
+		</p>
+		<p>
+			<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can help one another with problems and questions, but in the end everyone must do their own work.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Programs compile and run without error</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Good coding style</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Task requirements met or exceeded</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Total</th>
+					<td>6</td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+
+	<script src="../template/bundle.js" async defer></script>
+</body>
+</html>

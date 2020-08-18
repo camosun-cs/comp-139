@@ -8,4 +8,4 @@ Course materials for COMP139 at Camosun College
 1. [Linked Lists](labs/linked-lists)
 1. [Collections and Comparators](labs/collections)
 1. [Trees and Recursion](labs/trees)
-1. Final Project
+1. [Final Project](labs/project)
