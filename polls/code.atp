@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcone" TITLE="Given this code, what would fill in the blank?">
+<ANSWER ISCORRECT="false">public static void print(Integer[] list)</ANSWER>
+<ANSWER ISCORRECT="false">public static void print(String[] list)</ANSWER>
+<ANSWER ISCORRECT="false">public static void print(int[] list)</ANSWER>
+<ANSWER ISCORRECT="false">public static void print(Object[] list)</ANSWER>
+<ANSWER ISCORRECT="false">public static &lt;E&gt; void print(E[] list)</ANSWER>
+</QUESTION>
+
+</POLL>

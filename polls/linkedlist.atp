@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="What&nbsp;are&nbsp;the&nbsp;benefits&nbsp;of&nbsp;using&nbsp;a&nbsp;linked&nbsp;list&nbsp;rather&nbsp;than&nbsp;an&nbsp;array-based&nbsp;list?">
+<ANSWER ISCORRECT="false">Faster&nbsp;element&nbsp;lookup</ANSWER>
+<ANSWER ISCORRECT="false">Storage&nbsp;capacity</ANSWER>
+<ANSWER ISCORRECT="false">Faster&nbsp;element&nbsp;removal</ANSWER>
+<ANSWER ISCORRECT="false">Less&nbsp;memory&nbsp;usage</ANSWER>
+<ANSWER ISCORRECT="false">Less&nbsp;complex&nbsp;code</ANSWER>
+</QUESTION>
+
+</POLL>

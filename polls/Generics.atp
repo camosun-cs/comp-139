@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="Given List&lt;String&gt; list = new ArrayList&lt;&gt;(); Which of the following statements are correct?">
+<ANSWER ISCORRECT="true">list.add(&quot;Red&quot;);</ANSWER>
+<ANSWER ISCORRECT="false">list.add(new Integer(100));</ANSWER>
+<ANSWER ISCORRECT="false">list.add(new java.util.Date());</ANSWER>
+<ANSWER ISCORRECT="false">list.add(new ArrayList());</ANSWER>
+</QUESTION>
+
+</POLL>

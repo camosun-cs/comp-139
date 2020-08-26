@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="A set...">
+<ANSWER ISCORRECT="false">does not allow duplicate values</ANSWER>
+<ANSWER ISCORRECT="false">is a sorted collection</ANSWER>
+<ANSWER ISCORRECT="false">can be implemented using a List</ANSWER>
+<ANSWER ISCORRECT="false">uses a hashing function to find elements quickly</ANSWER>
+
+</QUESTION>
+
+</POLL>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcone" TITLE="Given List list = new ArrayList(); list.add(new Integer(100)); What is the type of data returned by list.get(0) ?">
+<ANSWER ISCORRECT="false">int</ANSWER>
+<ANSWER ISCORRECT="false">Integer</ANSWER>
+<ANSWER ISCORRECT="false">Object</ANSWER>
+<ANSWER ISCORRECT="false">Exception</ANSWER>
+</QUESTION>
+
+</POLL>

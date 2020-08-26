@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcone" TITLE="Can&nbsp;you&nbsp;build&nbsp;a&nbsp;list&nbsp;without&nbsp;using&nbsp;arrays?">
+<ANSWER ISCORRECT="false">Yes</ANSWER>
+<ANSWER ISCORRECT="false">No</ANSWER>
+<ANSWER ISCORRECT="false">Sometimes</ANSWER>
+</QUESTION>
+
+<QUESTION TYPE="mcmany" TITLE="What&nbsp;do&nbsp;Lists&nbsp;and&nbsp;arrays&nbsp;have&nbsp;in&nbsp;common?">
+<ANSWER ISCORRECT="false">They&nbsp;are&nbsp;data&nbsp;structures</ANSWER>
+<ANSWER ISCORRECT="false">They&nbsp;are&nbsp;concrete&nbsp;types</ANSWER>
+<ANSWER ISCORRECT="false">They&nbsp;have&nbsp;a&nbsp;fixed&nbsp;size</ANSWER>
+<ANSWER ISCORRECT="false">They&nbsp;have&nbsp;O(n)&nbsp;lookup&nbsp;time</ANSWER>
+<ANSWER ISCORRECT="false">They&nbsp;can&nbsp;hold&nbsp;any&nbsp;kind&nbsp;of&nbsp;data</ANSWER>
+<ANSWER ISCORRECT="false">They&nbsp;have&nbsp;a&nbsp;head&nbsp;and&nbsp;tail</ANSWER>
+</QUESTION>
+
+<QUESTION TYPE="mcmany" TITLE="When&nbsp;would&nbsp;you&nbsp;use&nbsp;a&nbsp;list&nbsp;instead&nbsp;of&nbsp;an&nbsp;array?">
+<ANSWER ISCORRECT="false">When&nbsp;memory&nbsp;usage&nbsp;is&nbsp;a&nbsp;concern</ANSWER>
+<ANSWER ISCORRECT="false">When&nbsp;you&nbsp;don't&nbsp;know&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;elements&nbsp;that&nbsp;will&nbsp;be&nbsp;stored</ANSWER>
+<ANSWER ISCORRECT="false">To&nbsp;easily&nbsp;keep&nbsp;track&nbsp;of&nbsp;how&nbsp;many&nbsp;items&nbsp;are&nbsp;currently&nbsp;stored</ANSWER>
+<ANSWER ISCORRECT="false">When&nbsp;you&nbsp;don't&nbsp;care&nbsp;about&nbsp;the&nbsp;order&nbsp;of&nbsp;elements</ANSWER>
+</QUESTION>
+
+</POLL>

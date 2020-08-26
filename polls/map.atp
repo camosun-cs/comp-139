@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="A map...">
+<ANSWER ISCORRECT="false">is a Concrete Data Type</ANSWER>
+<ANSWER ISCORRECT="false">is a non-linear collection</ANSWER>
+<ANSWER ISCORRECT="false">uses a hashing function to find elements quickly</ANSWER>
+<ANSWER ISCORRECT="false">has an equal number of keys and values</ANSWER>
+
+</QUESTION>
+
+</POLL>

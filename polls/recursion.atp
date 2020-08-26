@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="Which&nbsp;of&nbsp;the&nbsp;following&nbsp;statements&nbsp;are&nbsp;true?">
+<ANSWER ISCORRECT="false">Recursive&nbsp;methods&nbsp;run&nbsp;faster&nbsp;than&nbsp;non-recursive&nbsp;methods</ANSWER>
+<ANSWER ISCORRECT="false">Recursive&nbsp;methods&nbsp;use&nbsp;more&nbsp;memory&nbsp;than&nbsp;non-recursive&nbsp;methods</ANSWER>
+<ANSWER ISCORRECT="false">A&nbsp;recursive&nbsp;method&nbsp;can&nbsp;always&nbsp;be&nbsp;replaced&nbsp;by&nbsp;a&nbsp;non-recursive&nbsp;method</ANSWER>
+<ANSWER ISCORRECT="false">Recursion&nbsp;makes&nbsp;difficult&nbsp;problems&nbsp;easier&nbsp;to&nbsp;solve</ANSWER>
+</QUESTION>
+
+</POLL>

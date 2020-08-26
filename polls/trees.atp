@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="Which&nbsp;of&nbsp;the&nbsp;following&nbsp;statements&nbsp;are&nbsp;true?">
+<ANSWER ISCORRECT="false">Trees&nbsp;are&nbsp;a&nbsp;non-linear&nbsp;data&nbsp;structure</ANSWER>
+<ANSWER ISCORRECT="false">Trees&nbsp;always&nbsp;have&nbsp;a&nbsp;single&nbsp;root&nbsp;node</ANSWER>
+<ANSWER ISCORRECT="false">Nodes&nbsp;in&nbsp;a&nbsp;tree&nbsp;may&nbsp;have&nbsp;any&nbsp;number&nbsp;of&nbsp;children</ANSWER>
+<ANSWER ISCORRECT="false">Nodes&nbsp;in&nbsp;a&nbsp;tree&nbsp;may&nbsp;have&nbsp;any&nbsp;number&nbsp;of&nbsp;parents</ANSWER>
+<ANSWER ISCORRECT="false">Trees&nbsp;always&nbsp;have&nbsp;more&nbsp;leaf&nbsp;nodes&nbsp;than&nbsp;internal&nbsp;nodes</ANSWER>
+<ANSWER ISCORRECT="false">The&nbsp;root&nbsp;node&nbsp;of&nbsp;an&nbsp;empty&nbsp;tree&nbsp;is&nbsp;a&nbsp;leaf</ANSWER>
+<ANSWER ISCORRECT="false">A&nbsp;&quot;higher&quot;&nbsp;level&nbsp;of&nbsp;a&nbsp;tree&nbsp;contains&nbsp;more&nbsp;nodes&nbsp;than&nbsp;a&nbsp;&quot;lower&quot;&nbsp;level</ANSWER>
+<ANSWER ISCORRECT="false">Every&nbsp;node&nbsp;in&nbsp;a&nbsp;tree&nbsp;is&nbsp;connected&nbsp;by&nbsp;at&nbsp;least&nbsp;one&nbsp;edge</ANSWER>
+</QUESTION>
+
+</POLL>

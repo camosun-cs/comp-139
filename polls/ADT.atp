@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="An&nbsp;ADT&nbsp;describes:">
+<ANSWER ISCORRECT="false">The&nbsp;kind&nbsp;of&nbsp;data</ANSWER>
+<ANSWER ISCORRECT="false">Valid&nbsp;and&nbsp;invalid&nbsp;values</ANSWER>
+<ANSWER ISCORRECT="false">Method&nbsp;implementations</ANSWER>
+<ANSWER ISCORRECT="false">The&nbsp;operations&nbsp;that&nbsp;can&nbsp;be&nbsp;performed</ANSWER>
+<ANSWER ISCORRECT="false">The&nbsp;amount&nbsp;of&nbsp;memory&nbsp;needed</ANSWER>
+<ANSWER ISCORRECT="false">The&nbsp;name&nbsp;of&nbsp;classes&nbsp;and&nbsp;methods</ANSWER>
+<ANSWER ISCORRECT="false">The&nbsp;Big-O&nbsp;complexity&nbsp;of&nbsp;operations</ANSWER>
+<ANSWER ISCORRECT="false">The&nbsp;&quot;natural&nbsp;order&quot;&nbsp;of&nbsp;values</ANSWER>
+</QUESTION>
+
+</POLL>

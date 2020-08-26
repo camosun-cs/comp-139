@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="A heap...">
+<ANSWER ISCORRECT="false">is an Abstract Data Type (ADT)</ANSWER>
+<ANSWER ISCORRECT="false">is a sorted collection</ANSWER>
+<ANSWER ISCORRECT="false">is a kind of binary tree</ANSWER>
+<ANSWER ISCORRECT="false">is ideal for finding the minimum and maximum values</ANSWER>
+<ANSWER ISCORRECT="false">can be used as a queue</ANSWER>
+</QUESTION>
+
+</POLL>

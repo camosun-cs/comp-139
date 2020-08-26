@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<POLL TYPE="named" SHOWTIMER="no" ALARM="0:0" NOANSWER="yes" SHOWRESPONSE="yes">
+
+<QUESTION TYPE="mcmany" TITLE="Given a List&lt;Double&gt; named &quot;list&quot; that contains a few elements, which of the following statements are correct?">
+<ANSWER ISCORRECT="true">list.add(5.5);</ANSWER>
+<ANSWER ISCORRECT="false">list.add(3);</ANSWER>
+<ANSWER ISCORRECT="true">Double o = list.get(0);</ANSWER>
+<ANSWER ISCORRECT="true">double d = list.get(0);</ANSWER>
+<ANSWER ISCORRECT="false">Integer i = list.get(0);</ANSWER>
+</QUESTION>
+
+</POLL>
