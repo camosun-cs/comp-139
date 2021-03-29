@@ -56,12 +56,12 @@
 					TreeVisualizer gui = new TreeVisualizer(example);
 				}
 			</code></pre>
-			<p>Note that any changes made to your tree's contents from your own code (rather than through the GUI) will not automatically be displayed by the visualizer. To update the display after making a change, use the visualizer's <code class="language-java">refresh()</code> method, for example:</p>
+			<p>Note that any changes made to your tree's contents after constructing the GUI may not be automatically reflected in the visualizer. Click the "Refresh" button to show the latest state of your tree, or use the visualizer object's <code class="language-java">refresh()</code> method after making changes. For example:</p>
 			<pre><code class="language-java">
 				example.remove(3);
 				gui.refresh();
 			</code></pre>
-			<p>For the visualizer to be able to its job, your tree class must provide access to its root node through the <code class="language-java">rootNode()</code> method and all of its internal nodes must conform to the following interface:</p>
+			<p>For the visualizer to be able to its job, your tree class must provide access to its root node through the <code class="language-java">rootNode()</code> method and all of its nodes must conform to the following interface:</p>
 			<figure class="api">
 				<a class="api-doc" href="TreeNode.html">Javadoc</a>
 				<a class="api-interface" href="TreeNode.java" download>interface file</a>
