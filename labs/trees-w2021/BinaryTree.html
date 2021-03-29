@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>BinaryTree  (COMP 139 at Camosun)</title>
+<meta charset="UTF-8">
+<meta name="dc.created" content="2021-03-28">
+<meta name="description" content="declaration: package: ca.camosun.comp139.lab6, interface: BinaryTree">
+<meta name="generator" content="javadoc/ClassWriterImpl">
+<link rel="stylesheet" href="https://camosun-cs.github.io/comp-139/labs/template/javadoc.css">
+</head>
+<body class="class-declaration">
+<div class="flexBox">
+<header role="banner" class="flexHeader">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="skipNav"><a id="skip.navbar.top">
+<!--   -->
+</a></div>
+</nav>
+</header>
+<div class="flexContent">
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ca.camosun.comp139.lab6</a></div>
+<h1 title="Interface BinaryTree" class="title">Interface BinaryTree&lt;E&gt;</h1>
+</div>
+<div class="contentContainer">
+<section class="description">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>E</code> - type of data stored by this tree</dd>
+</dl>
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">java.lang.Iterable&lt;E&gt;</a></code></dd>
+</dl>
+<dl>
+<dt>All Known Subinterfaces:</dt>
+<dd><code><a href="BalancedBTree.html" title="interface in ca.camosun.comp139.lab6">BalancedBTree</a>&lt;E&gt;</code></dd>
+</dl>
+<hr>
+<pre>public interface <span class="typeNameLabel">BinaryTree&lt;E&gt;</span>
+extends java.lang.Iterable&lt;E&gt;</pre>
+<div class="block">A sorted collection implemented as a binary search tree. Stored values will
+ be ordered using the tree's <a href="#setComparator(java.util.Comparator)"><code>current Comparator</code></a>.
+ Implementations should require a <code>Comparator&lt;? super E&gt;</code> instance as a
+ parameter to all constructors to ensure that <a href="#add(E)"><code>add(E)</code></a> will function
+ correctly for all newly created trees.</div>
+<dl>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd><code>Maxwell Terpstra &lt;terpstrama@camosun.ca&gt;</code></dd>
+</dl>
+</section>
+<section class="summary">
+<ul class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<li class="blockList">
+<section class="methodSummary"><a id="method.summary">
+<!--   -->
+</a>
+<h2>Method Summary</h2>
+<div class="memberSummary">
+<div role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" id="t0" class="activeTableTab">All Methods</button></div>
+<div id="memberSummary_tabpanel" role="tabpanel">
+<table aria-labelledby="t0">
+<thead>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="altColor" id="i0">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#add(E)">add</a></span>&#8203;(<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&nbsp;element)</code></th>
+<td class="colLast">
+<div class="block">Add a value to the tree.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#has(E)">has</a></span>&#8203;(<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&nbsp;element)</code></th>
+<td class="colLast">
+<div class="block">Check whether or not the tree contains the given element.</div>
+</td>
+</tr>
+<tr class="altColor" id="i2">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#height()">height</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Measure the height of the tree.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i3">
+<td class="colFirst"><code>java.util.Iterator&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#iterator()">iterator</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns an inorder iterator over the elements in this tree.</div>
+</td>
+</tr>
+<tr class="altColor" id="i4">
+<td class="colFirst"><code><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#max()">max</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the last ("largest") value stored in the tree.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i5">
+<td class="colFirst"><code><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#min()">min</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the first ("smallest") value stored in the tree.</div>
+</td>
+</tr>
+<tr class="altColor" id="i6">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(E)">remove</a></span>&#8203;(<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&nbsp;element)</code></th>
+<td class="colLast">
+<div class="block">Remove a value from the tree.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i7">
+<td class="colFirst"><code><a href="TreeNode.html" title="interface in ca.camosun.comp139.lab6">TreeNode</a>&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>,&#8203;?&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rootNode()">rootNode</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the node at the base of this tree.</div>
+</td>
+</tr>
+<tr class="altColor" id="i8">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setComparator(java.util.Comparator)">setComparator</a></span>&#8203;(java.util.Comparator&lt;? super <a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&gt;&nbsp;comp)</code></th>
+<td class="colLast">
+<div class="block">Set the <em>current Comparator</em> used for ordering values within this
+ tree.</div>
+</td>
+</tr>
+<tr class="rowColor" id="i9">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size()">size</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Count the number of values stored in the tree.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="inheritedList">
+<h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3>
+<a id="methods.inherited.from.class.java.lang.Iterable">
+<!--   -->
+</a><code>forEach, spliterator</code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<li class="blockList">
+<section class="methodDetails"><a id="method.detail">
+<!--   -->
+</a>
+<h2>Method Details</h2>
+<ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="rootNode()">rootNode</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="TreeNode.html" title="interface in ca.camosun.comp139.lab6">TreeNode</a>&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>,&#8203;?&gt;</span>&nbsp;<span class="memberName">rootNode</span>()</div>
+<div class="block">Get the node at the base of this tree. Used by TreeVisualizer to
+ inspect the internal structure of the collection.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the root node, or null if the collection is currently empty</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="has(java.lang.Object)">
+<!--   -->
+</a><a id="has(E)">has</a></h3>
+<div class="memberSignature"><span class="returnType">boolean</span>&nbsp;<span class="memberName">has</span>&#8203;(<span class="arguments"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&nbsp;element)</span></div>
+<div class="block">Check whether or not the tree contains the given element.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>element</code> - the value to search for</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if element is in this collection; false otherwise</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="min()">min</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></span>&nbsp;<span class="memberName">min</span>()
+throws <span class="exceptions">java.util.NoSuchElementException</span></div>
+<div class="block">Get the first ("smallest") value stored in the tree. The order of
+ values is determined by the <a href="#setComparator(java.util.Comparator)"><code>current Comparator</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the minimum value in this collection</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.util.NoSuchElementException</code> - if the tree is empty</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="max()">max</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a></span>&nbsp;<span class="memberName">max</span>()
+throws <span class="exceptions">java.util.NoSuchElementException</span></div>
+<div class="block">Get the last ("largest") value stored in the tree. The order of
+ values is determined by the <a href="#setComparator(java.util.Comparator)"><code>current Comparator</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the maximum value in this collection</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.util.NoSuchElementException</code> - if the tree is empty</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="add(java.lang.Object)">
+<!--   -->
+</a><a id="add(E)">add</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">add</span>&#8203;(<span class="arguments"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&nbsp;element)</span></div>
+<div class="block">Add a value to the tree.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>element</code> - new value to add</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="remove(java.lang.Object)">
+<!--   -->
+</a><a id="remove(E)">remove</a></h3>
+<div class="memberSignature"><span class="returnType">boolean</span>&nbsp;<span class="memberName">remove</span>&#8203;(<span class="arguments"><a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&nbsp;element)</span></div>
+<div class="block">Remove a value from the tree.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>element</code> - value to remove</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the collection contained the given element; false otherwise</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="size()">size</a></h3>
+<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">size</span>()</div>
+<div class="block">Count the number of values stored in the tree.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>number of elements stored in the collection</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="height()">height</a></h3>
+<div class="memberSignature"><span class="returnType">int</span>&nbsp;<span class="memberName">height</span>()</div>
+<div class="block">Measure the height of the tree. A tree with a <a href="#size()"><code>size()</code></a> of
+ <samp>0</samp> will have a height of <samp>0</samp>, and a tree with a
+ size of <samp>1</samp> will have a height of <samp>1</samp>.
+ Otherwise, the height will be an implementation defined value between
+ <samp>1</samp> and its size.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the length of the longest branch within the tree</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setComparator(java.util.Comparator)">setComparator</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">setComparator</span>&#8203;(<span class="arguments">java.util.Comparator&lt;? super <a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&gt;&nbsp;comp)</span></div>
+<div class="block">Set the <em>current Comparator</em> used for ordering values within this
+ tree. The <a href="#add(E)"><code>add(E)</code></a>, <a href="#min()"><code>min()</code></a>, <a href="#max()"><code>max()</code></a>,
+ and <a href="#iterator()"><code>iterator()</code></a> methods make use of this Comparator to determine
+ the total ordering of all added elements. When the current Comparator is
+ changed, the resulting order of equivalent elements is implementation
+ defined (that is, previous orderings are not necessarily stable).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>comp</code> - new <em>current Comparator</em> instance to use for future
+     ordering.</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="iterator()">iterator</a></h3>
+<div class="memberSignature"><span class="returnType">java.util.Iterator&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&gt;</span>&nbsp;<span class="memberName">iterator</span>()</div>
+<div class="block">Returns an inorder iterator over the elements in this tree.
+ The iterator created by this method is <em>fail-safe</em>; that is, it
+ captures a snapshot of the current tree contents when initialized and
+ will not be affected by later changes to the tree. The
+ <code>Iterator.remove()</code> method must be supported, functioning equivalently
+ to calling <a href="#remove(E)"><code>remove(E)</code></a> on the underlying tree.
+ Elements are returned in the order specified by the
+ <a href="#setComparator(java.util.Comparator)"><code>current Comparator</code></a> at time of
+ construction (using an "inorder" tree traversal).</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>iterator</code>&nbsp;in interface&nbsp;<code>java.lang.Iterable&lt;<a href="BinaryTree.html" title="type parameter in BinaryTree">E</a>&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a fail-safe inorder iterator over this tree's content</dd>
+</dl>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+<footer role="contentinfo">
+<nav role="navigation">
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="subNav">
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+</div>
+<a id="skip.navbar.bottom">
+<!--   -->
+</a>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+</nav>
+</footer>
+</div>
+</div>
+</body>
+</html>

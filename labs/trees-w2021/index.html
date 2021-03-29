@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<meta charset="utf-8">
+	<title>Trees and Recursion (Lab 6) - COMP 139</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="https://camosun-cs.github.io/comp-139/labs/trees/" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
+</head>
+<body>
+	<header>
+		<h1>COMP 139 - Lab 6 - Trees and Recursion</h1>
+		<nav><ol>
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<li><a href="#task1"><strong>Task 1</strong>: Unbalanced Tree</a></li>
+			<li><a href="#task2"><strong>Task 2</strong>: AVL Tree</a> <span class="bonus">bonus</span></li>
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>In this lab assignment you will create your own binary search tree class. In the process you will practice what you've learned about:</p>
+		<ul>
+			<li>binary search trees</li>
+			<li>recursion</li>
+			<li>balanced and unbalanced trees</li>
+			<li>non-linear collections</li>
+			<li>linked data structures</li>
+			<li>generics</li>
+		</ul>
+		<p>Make sure you test your code as you progress through the assignment. There is no particular "main program" requirements for this lab, but effective testing will be essential to ensure that your code is correct.</p>
+		<p>Note that all interface files for this assignment (plus solutions and additional tools) can be imported from the provided <samp>Comp139.jar</samp> file, rather than copying them manually into your project. Ask for assistance during the lab session on how to get this set up!</p>
+	</section>
+
+	<section id="task1">
+		<h2>Task 1: Unbalanced Tree</h2>
+		<p>Create an <em>unbalanced</em> binary search tree class that is an implementation of the <a href="BinaryTree.java" download><samp>ca<wbr/>.camosun<wbr/>.comp139<wbr/>.lab6<wbr/>.BinaryTree</samp></a> interface. <strong>Use recursion</strong> where appropriate. Test your class and its methods using a main method program.</p>
+		<figure class="api">
+			<a class="api-doc" href="BinaryTree.html">Javadoc</a>
+			<a class="api-interface" href="BinaryTree.java" download>interface file</a>
+		</figure>
+		<p>Note that the type parameter (<code class="language- token class-name">E</code>) for this interface is not constrained, but your implementation's constructor must require a <code class="language-java">Comparator&lt;? super E></code> argument to ensure that the content can be ordered. To use the natural ordering of <code class="language-java">Comparable</code> content, provide <code class="language-java">Comparator.naturalOrder()</code> to the constructor.</p>
+		<p>An interactive visualization tool is provided for you to help with debugging. The <code class="language-java">rootNode()</code> method is used by this tool to get access to the internals of your tree. If you do not wish to use the visualizer, you may throw an <code class="language-java">UnsupportedOperationException</code> from this method instead.</p>
+		<details>
+			<summary>Using the visualizer</summary>
+			<p>To use the visualization tool, you will first need to add the <samp>Comp139.jar</samp> file as a dependancy to your project. Ask for help during the lab period if you need assistance setting this up.</p>
+			<p>Then you can import the visualizer class into your main program like so:</p>
+			<pre><code class="lanuage-java">
+				import ca.camosun.comp139.lab6.TreeVisualizer;
+			</code></pre>
+			<p>Next, construct a TreeVisualizer, providing your tree instance as a parameter. For example:</p>
+			<pre><code class="langauge-java">
+				public static void main(String[] args) {
+					MyTree&lt;String> example = new MyTree&lt;>(Comparator.naturalOrder());
+					TreeVisualizer gui = new TreeVisualizer(example);
+				}
+			</code></pre>
+			<p>Note that any changes made to your tree's contents from your own code (rather than through the GUI) will not automatically be displayed by the visualizer. To update the display after making a change, use the visualizer's <code class="language-java">refresh()</code> method, for example:</p>
+			<pre><code class="language-java">
+				example.remove(3);
+				gui.refresh();
+			</code></pre>
+			<p>For the visualizer to be able to its job, your tree class must provide access to its root node through the <code class="language-java">rootNode()</code> method and all of its internal nodes must conform to the following interface:</p>
+			<figure class="api">
+				<a class="api-doc" href="TreeNode.html">Javadoc</a>
+				<a class="api-interface" href="TreeNode.java" download>interface file</a>
+			</figure>
+			<p>The second type parameter to this interface is somewhat unusual. It is set up this way to allow you to restrict the types of nodes that your implementation can link to. Most likely, you only want your node class to link to other nodes of the same class! You can enforce this by implementing the interface like this:</p>
+			<pre><code class="language-java">
+				class MyNode&lt;E> implements TreeNode&lt;E, MyNode&lt;E>> { }
+			</code></pre>
+			<p>As a result, the <samp>getLeft()</samp> and <samp>getRight()</samp> methods will return <em>your class</em> instead of the interface type. This may make working with your nodes in <a href="#task2">Task 2</a> a little simpler, since you'll have direct access to any extra properties you add even when using these getters.</p>
+		</details>
+	</section>
+
+	<section id="task2">
+		<h2>Task 2: AVL Tree <span class="bonus">bonus</span></h2>
+		<ol class="instructions">
+			<li>
+				<p>Change your binary tree class to implement the <a href="BalancedBTree.java" download><samp>ca<wbr/>.camosun<wbr/>.comp139<wbr/>.lab6<wbr/>.BalancedBTree</samp></a> interface instead of <samp>BinaryTree</samp>.</p>
+				<aside>Once you make this switch, the <samp>TreeVisualizer</samp> tool will show additional information about subtree balance.</aside>
+				<details>
+					<summary>BalancedBTree does not add any new methods&hellip;</summary>
+					<figure class="api">
+						<a class="api-doc" href="BalancedBTree.html">Javadoc</a>
+						<a class="api-interface" href="BalancedBTree.java" download>interface file</a>
+					</figure>
+				</details>
+			</li>
+			<li>Modify your implementation as necessary to perform the self-balancing behaviour of an AVL tree. Test your code from your main method program.</li>
+		</ol>
+	</section>
+
+	<section id="submission">
+		<h2>Submission</h2>
+		<p>
+			Completing all tasks in this lab should result in <strong>at least one</strong> Java class file and a main method program providing tests. You may implement your tree node class as a nested class within the tree itself, or as a separate file. You do not need to include the provided interface files, since they may be imported directly from <samp>Comp139.jar</samp>, but if you do include them <em>do not change the package they are defined in</em>. Compress your project source directory into a ZIP archive and upload it to the D2L assignment.
+		</p>
+		<p>
+			The marks for this lab are heavily weighted towards good coding practice and style. Pay attention to your code formatting, make sure you have documented all public members using JavaDoc, and make sure you are using constants, arrays, loops, and methods effectively.
+		</p>
+		<p>
+			<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can help one another with problems and questions, but in the end everyone must do their own work.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Programs compile and run without errors or warnings</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Source code is consistent, follows standard conventions, and is well commented using Javadoc</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>All task requirements are met or exceeded</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Demonstrates competency for all learning outcomes</td>
+					<td>3</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Total</th>
+					<td>12</td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+
+	<script src="../template/bundle.js" async defer></script>
+</body>
+</html>
