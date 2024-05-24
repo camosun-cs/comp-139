@@ -176,7 +176,7 @@ long&nbsp;d)</code></th>
 </tr>
 <tr class="rowColor" id="i5">
 <td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#compareTo(lab2.Rational)">compareTo</a></span>&#8203;(<a href="Rational.html" title="class in lab2">Rational</a>&nbsp;val)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#compareTo(lab2.Rational)">compareTo</a></span>&#8203;(<a href="Rational.html" title="class in lab2">Rational</a>&nbsp;other)</code></th>
 <td class="colLast">
 <div class="block">Compares this Rational value to another for natural ordering.</div>
 </td>
@@ -281,21 +281,21 @@ long&nbsp;d)</code></th>
 </tr>
 <tr class="altColor" id="i22">
 <td class="colFirst"><code><a href="Rational.html" title="class in lab2">Rational</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#multiply(double)">multiply</a></span>&#8203;(double&nbsp;val)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#multiply(double)">multiply</a></span>&#8203;(double&nbsp;multiplier)</code></th>
 <td class="colLast">
 <div class="block">Computes the value of this Rational multiplied by the given number.</div>
 </td>
 </tr>
 <tr class="rowColor" id="i23">
 <td class="colFirst"><code><a href="Rational.html" title="class in lab2">Rational</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#multiply(long)">multiply</a></span>&#8203;(long&nbsp;val)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#multiply(long)">multiply</a></span>&#8203;(long&nbsp;multiplier)</code></th>
 <td class="colLast">
 <div class="block">Computes the value of this Rational multiplied by the given number.</div>
 </td>
 </tr>
 <tr class="altColor" id="i24">
 <td class="colFirst"><code><a href="Rational.html" title="class in lab2">Rational</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#multiply(lab2.Rational)">multiply</a></span>&#8203;(<a href="Rational.html" title="class in lab2">Rational</a>&nbsp;val)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#multiply(lab2.Rational)">multiply</a></span>&#8203;(<a href="Rational.html" title="class in lab2">Rational</a>&nbsp;multiplier)</code></th>
 <td class="colLast">
 <div class="block">Computes the value of this Rational multiplied by the given other Rational.</div>
 </td>
@@ -491,7 +491,7 @@ long&nbsp;d)</span></div>
 
  <p>The <code>source</code> value may be given in the form
  <samp>"<var>a</var> / <var>b</var>"</samp> where <var>a</var> and
- <var>b</var> are integral values and <var>b</var> is non-zero, or as a decimal number.</p>
+ <var>b</var> are integral values and <var>b</var> is non-zero, or as a single decimal number.</p>
 
 </div>
 <dl>
@@ -513,7 +513,8 @@ long&nbsp;d)</span></div>
 <section class="detail">
 <h3><a id="signum()">signum</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">signum</span>()</div>
-<div class="block">Returns the sign of this value.</div>
+<div class="block">Returns the sign of this value.
+<p>Hint: numerator * denominator</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><samp>-1</samp> if this value is negative, <samp>+1</samp> if
@@ -580,6 +581,7 @@ long&nbsp;d)</span></div>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">canonical</span>()</div>
 <div class="block">Convert this Rational to its canonical form - an irreducible fraction
  with a positive denominator.
+ <p>Hint: divide the numerator and denominator by the greatest common divisor.</p>
 </div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -600,7 +602,7 @@ long&nbsp;d)</span></div>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>addend</code> - a number to add</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this + val</code></dd>
+<dd><code>this + addend</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(double)"><code>valueOf(double)</code></a>,
 <a href="#add(lab2.Rational)"><code>add(Rational)</code></a></dd>
@@ -616,7 +618,7 @@ long&nbsp;d)</span></div>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>addend</code> - a number to add</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this + val</code></dd>
+<dd><code>this + addend</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(long)"><code>valueOf(long)</code></a>,
 <a href="#add(lab2.Rational)"><code>add(Rational)</code></a></dd>
@@ -627,12 +629,13 @@ long&nbsp;d)</span></div>
 <section class="detail">
 <h3><a id="add(lab2.Rational)">add</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">add</span>&#8203;(<span class="arguments"><a href="Rational.html" title="class in lab2">Rational</a>&nbsp;addend)</span></div>
-<div class="block">Computes the value of this Rational plus the given other Rational.</div>
+<div class="block">Computes the value of this Rational plus the given other Rational.
+<p>Hint: get a common denominator by multiplication first</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>addend</code> - a Rational value to add</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this + val</code></dd>
+<dd><code>this + addend</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://en.wikipedia.org/wiki/Rational_number#Addition">
      Wikipedia entry on adding rational numbers</a>,
@@ -649,7 +652,7 @@ long&nbsp;d)</span></div>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>subtrahend</code> - a number to subtract</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this - val</code></dd>
+<dd><code>this - subtrahend</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(long)"><code>valueOf(long)</code></a>,
 <a href="#subtract(lab2.Rational)"><code>subtract(Rational)</code></a></dd>
@@ -665,7 +668,7 @@ long&nbsp;d)</span></div>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>subtrahend</code> - a number to subtract</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this - val</code></dd>
+<dd><code>this - subtrahend</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(double)"><code>valueOf(double)</code></a>,
 <a href="#subtract(lab2.Rational)"><code>subtract(Rational)</code></a></dd>
@@ -676,12 +679,13 @@ long&nbsp;d)</span></div>
 <section class="detail">
 <h3><a id="subtract(lab2.Rational)">subtract</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">subtract</span>&#8203;(<span class="arguments"><a href="Rational.html" title="class in lab2">Rational</a>&nbsp;subtrahend)</span></div>
-<div class="block">Computes the value of this Rational minus the given other Rational.</div>
+<div class="block">Computes the value of this Rational minus the given other Rational.
+<p>Hint: get a common denominator by multiplication first</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>subtrahend</code> - a Rational value to subtract</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this - val</code></dd>
+<dd><code>this - subtrahend</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://en.wikipedia.org/wiki/Rational_number#Subtraction">
      Wikipedia entry on subtracting rational numbers</a>,
@@ -692,13 +696,13 @@ long&nbsp;d)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="multiply(double)">multiply</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">multiply</span>&#8203;(<span class="arguments">double&nbsp;val)</span></div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">multiply</span>&#8203;(<span class="arguments">double&nbsp;multiplier)</span></div>
 <div class="block">Computes the value of this Rational multiplied by the given number.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>val</code> - a number to multiply by</dd>
+<dd><code>multiplier</code> - a number to multiply by</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this * val</code></dd>
+<dd><code>this * multiplier</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(double)"><code>valueOf(double)</code></a>,
 <a href="#multiply(lab2.Rational)"><code>multiply(Rational)</code></a></dd>
@@ -708,13 +712,13 @@ long&nbsp;d)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="multiply(long)">multiply</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">multiply</span>&#8203;(<span class="arguments">long&nbsp;val)</span></div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">multiply</span>&#8203;(<span class="arguments">long&nbsp;multiplier)</span></div>
 <div class="block">Computes the value of this Rational multiplied by the given number.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>val</code> - a number to multiply by</dd>
+<dd><code>multiplier</code> - a number to multiply by</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this * val</code></dd>
+<dd><code>this * multiplier</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(long)"><code>valueOf(long)</code></a>,
 <a href="#multiply(lab2.Rational)"><code>multiply(Rational)</code></a></dd>
@@ -724,13 +728,13 @@ long&nbsp;d)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="multiply(lab2.Rational)">multiply</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">multiply</span>&#8203;(<span class="arguments"><a href="Rational.html" title="class in lab2">Rational</a>&nbsp;val)</span></div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">multiply</span>&#8203;(<span class="arguments"><a href="Rational.html" title="class in lab2">Rational</a>&nbsp;multiplier)</span></div>
 <div class="block">Computes the value of this Rational multiplied by the given other Rational.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>val</code> - a Rational value to multiply by</dd>
+<dd><code>multiplier</code> - a Rational value to multiply by</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this * val</code></dd>
+<dd><code>this * multiplier</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://en.wikipedia.org/wiki/Rational_number#Multiplication">
      Wikipedia entry on multiplying rational numbers</a>,
@@ -747,9 +751,9 @@ long&nbsp;d)</span></div>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>divisor</code> - a number to divide by</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this / val</code></dd>
+<dd><code>this / divisor</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArithmeticException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ArithmeticException</a></code> - if val is zero</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArithmeticException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ArithmeticException</a></code> - if divisor is zero</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(double)"><code>valueOf(double)</code></a>,
 <a href="#divide(lab2.Rational)"><code>divide(Rational)</code></a></dd>
@@ -765,9 +769,9 @@ long&nbsp;d)</span></div>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>divisor</code> - a number to divide by</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this / val</code></dd>
+<dd><code>this / divisor</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArithmeticException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ArithmeticException</a></code> - if val is zero</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArithmeticException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ArithmeticException</a></code> - if divisor is zero</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#valueOf(long)"><code>valueOf(long)</code></a>,
 <a href="#divide(lab2.Rational)"><code>divide(Rational)</code></a></dd>
@@ -778,14 +782,15 @@ long&nbsp;d)</span></div>
 <section class="detail">
 <h3><a id="divide(lab2.Rational)">divide</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">divide</span>&#8203;(<span class="arguments"><a href="Rational.html" title="class in lab2">Rational</a>&nbsp;divisor)</span></div>
-<div class="block">Computes the value of this Rational divided by the given other Rational.</div>
+<div class="block">Computes the value of this Rational divided by the given other Rational.
+<p>Hint: use reciprocal multiplication</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>divisor</code> - a Rational value to divide by</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>this / val</code></dd>
+<dd><code>this / divisor</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArithmeticException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ArithmeticException</a></code> - if val is zero</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ArithmeticException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ArithmeticException</a></code> - if divisor is zero</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://en.wikipedia.org/wiki/Rational_number#Division">
      Wikipedia entry on division of rational numbers</a>,
@@ -849,7 +854,8 @@ long&nbsp;d)</span></div>
 <section class="detail">
 <h3><a id="reciprocal()">reciprocal</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="Rational.html" title="class in lab2">Rational</a></span>&nbsp;<span class="memberName">reciprocal</span>()</div>
-<div class="block">Returns a Rational that is the multiplicative inverse of this value.</div>
+<div class="block">Returns a Rational that is the multiplicative inverse of this value.
+<p>Hint: swap the numerator and denominator</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>this<sup>-1</sup></code></dd>
@@ -955,9 +961,7 @@ long&nbsp;d)</span></div>
 <section class="detail">
 <h3><a id="toString()">toString</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></span>&nbsp;<span class="memberName">toString</span>()</div>
-<div class="block">Returns the string representation of this Rational. If the denominator
- is <samp>1</samp>, only the numerator will be shown. Otherwise, the value
- is displayed in the format <samp>"<var>numerator</var>/<var>denominator</var>"</samp>.</div>
+<div class="block">Returns the string representation of this Rational, in the format <samp>"<var>numerator</var>/<var>denominator</var>"</samp>. Note that either (or both) of the numerator or denominator may be negative.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
@@ -969,13 +973,16 @@ long&nbsp;d)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="compareTo(lab2.Rational)">compareTo</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">compareTo</span>&#8203;(<span class="arguments"><a href="Rational.html" title="class in lab2">Rational</a>&nbsp;val)</span></div>
-<div class="block">Compares this Rational value to another for natural ordering.</div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">compareTo</span>&#8203;(<span class="arguments"><a href="Rational.html" title="class in lab2">Rational</a>&nbsp;other)</span></div>
+<div class="block">Compares this Rational value to another for natural ordering.
+<p>Hint: multiply to get a common denominator</p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html?is-external=true#compareTo(T)" title="class or interface in java.lang" class="externalLink">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Comparable</a>&lt;<a href="Rational.html" title="class in lab2">Rational</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the object to compare to</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="#canonical()"><code>canonical()</code></a>,
+<dd>
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html?is-external=true#compareTo(java.math.BigInteger)" title="class or interface in java.math" class="externalLink"><code>BigInteger.compareTo(BigInteger)</code></a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html?is-external=true#multiply(java.math.BigInteger)" title="class or interface in java.math" class="externalLink"><code>BigInteger.multiply(BigInteger)</code></a></dd>
 </dl>
@@ -987,8 +994,9 @@ long&nbsp;d)</span></div>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">boolean</span>&nbsp;<span class="memberName">equals</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;other)</span></div>
 <div class="block">Test whether this Rational is equivalent to the given object.
 
- <p>Returns true if and only if <code>other</code> is a Rational that
- represents the same value as <code>this</code>.</p></div>
+ <p>Returns true if and only if <code>other</code> is a Rational object that
+ represents the same exact numerical value as <code>this</code>.</p>
+<p>Hint: get a common denominator by multiplication first</p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
@@ -997,7 +1005,7 @@ long&nbsp;d)</span></div>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>this == other</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="#canonical()"><code>canonical()</code></a>,
+<dd>
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html?is-external=true#multiply(java.math.BigInteger)" title="class or interface in java.math" class="externalLink"><code>BigInteger.multiply(BigInteger)</code></a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.math" class="externalLink"><code>BigInteger.equals(Object)</code></a></dd>
 </dl>
@@ -1007,7 +1015,8 @@ long&nbsp;d)</span></div>
 <section class="detail">
 <h3><a id="hashCode()">hashCode</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">int</span>&nbsp;<span class="memberName">hashCode</span>()</div>
-<div class="block">Returns the hash code for this Rational.</div>
+<div class="block">Returns the hash code for this Rational.
+<p>Hint: use <a href="#canonical()"><code>canonical()</code></a> first to ensure equal values have the same hashCode</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
@@ -1015,8 +1024,7 @@ long&nbsp;d)</span></div>
 <dd>hash code for this Rational</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#canonical()"><code>canonical()</code></a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html?is-external=true#hash(java.lang.Object...)" title="class or interface in java.util" class="externalLink"><code>Objects.hash(Object...)</code></a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink"><code>Object.equals(Object)</code></a></dd>
+<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html?is-external=true#hash(java.lang.Object...)" title="class or interface in java.util" class="externalLink"><code>Objects.hash(Object...)</code></a></dd>
 </dl>
 </section>
 </li>
