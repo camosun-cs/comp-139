@@ -3,7 +3,7 @@ import java.time.Period;
 
 /**
  * A horse, of course.
- * @author {@code Maxwell Terpstra <C0380979@intra.camosun.bc.ca>}
+ * @author Maxwell Terpstra
  */
 public class Horse {
     /**

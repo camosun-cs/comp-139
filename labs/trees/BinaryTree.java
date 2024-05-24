@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  * implement the {@link java.lang.Comparable} interface, and will be stored
  * in the tree according to their natural ordering.
  * 
- * @author {@code Maxwell Terpstra <C0380979@intra.camosun.bc.ca>}
+ * @author Maxwell Terpstra
  * @param <E> type of data stored by this tree
  */
 public interface BinaryTree<E extends Comparable<? super E>> {

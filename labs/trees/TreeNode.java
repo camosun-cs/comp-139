@@ -6,7 +6,7 @@ package examples;
  * content or have left or right links. Implementers may choose to represent
  * leaf nodes using {@code null} references, or as normal TreeNode instances.
  * 
- * @author {@code Maxwell Terpstra <C0380979@intra.camosun.bc.ca>}
+ * @author Maxwell Terpstra
  * @param <E> type of stored elements
  * @param <T> TreeNode type that is valid to link to
  */
