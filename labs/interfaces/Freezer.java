@@ -8,9 +8,7 @@ public class Freezer {
         UPRIGHT("3x3x5"),
         DRAWER("2x2x4");
         private String actual;
-        Size(String s) {
-            this.actual = s;
-        }
+        Size(String s) { this.actual = s; }
         String dimensions() { return this.actual; }
     }
 
@@ -29,7 +27,7 @@ public class Freezer {
      * Constructs a Freezer of the given type.
      * @param s freezer size
      * @param electric whether or not the freezer uses electricity
-     * @param water whether or not the
+     * @param water whether or not the freezer has a water outlet
      */
     public Freezer(Size s, boolean electric, boolean water) {
         this.size = s;
@@ -52,13 +50,13 @@ public class Freezer {
     public boolean needsElectricity() { return this.electric; }
 
     /**
-     * Whether or not this freezer requires a water-line hookup.
-     * @return true if the freezer uses water
+     * Whether or not this freezer needs to be connected to a water drain.
+     * @return true if the freezer has a water outlet
      */
-    public boolean needsWater() { return this.waterFlow; }
+    public boolean needsPlumbing() { return this.waterFlow; }
 
     /**
-     * Get the current temperature setting
+     * Get the current temperature setting.
      * @return a unitless setting number, from 0 to 5
      */
     public int getTemperature() {
@@ -66,14 +64,13 @@ public class Freezer {
     }
 
     /**
-     * Change the freezer temperature setting.
+     * Change the freezer temperature setting. A highter setting provides more
+     * cooling, resulting in a lower actual temperature.
      * @param t temperature setting, from 0 to 5
      */
     public void setTemperature(int t) {
-        if (t <= 0) {
-            this.temp = 0;
-        } else if (t >= 5) {
-            this.temp = 5;
+        if (t < 0 || t > 5) {
+            throw new IllegalArgumentException("invalid temperature value");
         } else {
             this.temp = t;
         }

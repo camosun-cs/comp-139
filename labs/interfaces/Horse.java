@@ -14,12 +14,12 @@ public class Horse {
     private final String breed;
     private final LocalDate born;
 
-    public static final int[] PONY_STALL_SIZE = { 200, 100, 200 };
-    public static final int[] LARGE_STALL_SIZE = { 400, 300, 400 };
-    public static final int[] STANDARD_STALL_SIZE = { 400, 200, 300 };
+    public static final int[] PONY_STALL_SIZE = { 200, 100 };
+    public static final int[] LARGE_STALL_SIZE = { 400, 300 };
+    public static final int[] STANDARD_STALL_SIZE = { 400, 200 };
 
     /**
-     * Create a record for a horse that was just born.
+     * Create a newborn, unnamed horse.
      * @param breed horse breed (in lower case)
      */
     public Horse(String breed) {
@@ -27,7 +27,7 @@ public class Horse {
     }
 
     /**
-     * Create a record for a Horse that was born some time ago.
+     * Create a Horse that was born some time ago.
      * @param breed horse breed (in lower case)
      * @param name name of the horse
      * @param born date the horse was born
@@ -64,7 +64,7 @@ public class Horse {
 
     /**
      * Get the minimum size of stall needed to stable this horse.
-     * @return a 3-dimensional array of measurements in centimeters
+     * @return an array of [length, width] measurements in centimeters
      */
     public int[] size() {
         if (Horse.isPony(this.breed)) {
@@ -80,21 +80,9 @@ public class Horse {
     }
 
     /**
-     * Horses do not necessarily need electricity in their stables.
-     * @return false
-     */
-    public boolean needsElectricity() { return false; }
-
-    /**
-     * Since horses are living creatures, they all need a source of water to survive.
-     * @return true
-     */
-    public boolean needsWater() { return true; }
-
-    /**
      * Whether or not this breed requires a heated stable.
      * @return true if the this horse breed is known to have poor health
-     *     outcomes in unheated stables.
+     *     outcomes in unheated stables
      */
     public boolean needsHeat() {
         return Horse.isPony(this.breed);

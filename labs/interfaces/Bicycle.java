@@ -24,15 +24,15 @@ public class Bicycle {
 
     /**
      * Get the dimensions of this bicycle, in centimeters.
-     * @return a 3D array of measurements in centimeters.
+     * @return an array of [length, width, height] measurements in centimeters
      */
     public int[] size() {
         return SIZE;
     }
 
     /**
-     * Get the minimum amount of space to store this bicycle.
-     * @return a 3D array of measurements in centimeters.
+     * Get the minimum amount of space needed to store this bicycle.
+     * @return an array of [length, width, height] measurements in centimeters
      */
     public int[] storageSize() {
         if (collapsible) {
@@ -52,5 +52,5 @@ public class Bicycle {
      * Whether or not this bicycle has an electric drive system.
      * @return true if this bicycle needs to
      */
-    public boolean needsElectricity() { return this.electricAssist; }
+    public boolean usesElectricity() { return this.electricAssist; }
 }
